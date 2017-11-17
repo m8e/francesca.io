@@ -22,20 +22,18 @@ if(fra_config["error_redirect"] != "") {
 
 
 //Error manager
-if($_GET["fra_error"] != "" || !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
-	if($_GET["fra_error"] != "" && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
-			if(fra_config["error_redirect"] != "") {
-				header("location: ".fra_config["error_redirect"]);
-				die();
-			}
-			$fra_config["controller"] 	= fra_config["error_controller"];
-			$fra_config["action"] 		= fra_config["error_action"];
-			if(isset($_GET["fra_error"])) {
-				$fra_config["error"]	= $_GET["fra_error"];
-			} else {
-				$fra_config["error"]	= 404;
-			}
-	}
+if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php") && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php"))) {
+		if(fra_config["error_redirect"] != "") {
+			header("location: ".fra_config["error_redirect"]);
+			die();
+		}
+		$fra_config["controller"] 	= fra_config["error_controller"];
+		$fra_config["action"] 		= fra_config["error_action"];
+		if(isset($_GET["fra_error"])) {
+			$fra_config["error"]	= $_GET["fra_error"];
+		} else {
+			$fra_config["error"]	= 404;
+		}
 } else {
 	if($fra_config["controller"] == fra_config["error_controller"] && $fra_config["action"] == fra_config["error_action"]) {
 		$fra_config["error"]		= 404;

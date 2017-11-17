@@ -21,14 +21,9 @@ if(fra_config["default_redirect"] != "") {
 }
 
 
-//Error settings if structure controller/action is not complete
+//Default settind if structure controller/action is not complete
 if($fra_config["controller"] != "" && $fra_config["action"] == "") {
-	$fra_config["controller"] 	= fra_config["error_controller"];
-	$fra_config["action"] 		= fra_config["error_action"];
-	if(fra_config["default_redirect"] != "") {
-		header("location: ".fra_config["error_redirect"]);
-		die();
-	}
+	$fra_config["action"] = "index";
 }
 
 
