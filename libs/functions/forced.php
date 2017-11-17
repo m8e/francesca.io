@@ -24,7 +24,7 @@ if(is_numeric(fra_config["ssl_mode"])) {
 		die("<b>Error!</b> Wrong or missing 'ssl mode' configuration.");
 	}
 } else {
-	die("<b>Error!</b> Missing or missing 'ssl mode' configuration.");
+	die("<b>Error!</b> Wrong or missing 'ssl mode' configuration.");
 }
 
 
@@ -46,9 +46,9 @@ if(is_numeric(fra_config["www_mode"])) {
 			}
 		}
 	} else {
-		die("<b>Error!</b> Missing or missing 'www mode' configuration.");
+		die("<b>Error!</b> Wrong or missing 'www mode' configuration.");
 	}
 } else {
-	die("<b>Error!</b> Missing or missing 'www mode' configuration.");
+	die("<b>Error!</b> Wrong or missing 'www mode' configuration.");
 }
 
