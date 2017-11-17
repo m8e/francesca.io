@@ -46,6 +46,6 @@ if($_GET["fra_error"] != "" || !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".f
 
 
 //Route View Safe
-if(!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
+if(!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php") && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
 	die("<b>FATAL ERROR!</b> No output view files found into App folder.");
 }
