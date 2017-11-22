@@ -21,7 +21,7 @@ if(fra_config["default_redirect"] != "") {
 }
 
 
-//Default settind if structure controller/action is not complete
+//Default setting if structure controller/action is not complete
 if($fra_config["controller"] != "" && $fra_config["action"] == "") {
 	$fra_config["action"] = "index";
 }
