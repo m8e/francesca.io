@@ -32,7 +32,7 @@ Class Tool {
 	/* $fra->tool->isonline(URL)
 	***************************************************
 	| This function checks if an URL is or not on-line
-	| and returns TRYE or FALSE value.
+	| and returns TRUE or FALSE value.
 	***************************************************/
 		if($url != "" && filter_var($url, FILTER_VALIDATE_URL)) {
 			$curlInit = curl_init($url);
