@@ -18,10 +18,10 @@
 ////////////////////////////////////////////////////////////////////////////
 
 //Define an application name... (ex: My Website, Prod App, Staging App, ...)
-$fra_config["name"] 							= "";
+$fra_config["name"] 							= "Francesca.io";
 
 //Define a version of app
-$fra_config["version"] 							= "";
+$fra_config["version"] 							= "beta";
 
 //Define the application folder
 $fra_config["folder"] 							= "default";
@@ -36,15 +36,15 @@ $fra_config["logs"] 							= 1;
 $fra_config["minify"] 							= 1;
 
 //Set Default Routing (home page)
-$fra_config["default_controller"] 				= "";
-$fra_config["default_action"] 					= "";
+$fra_config["default_controller"] 				= "demo";
+$fra_config["default_action"] 					= "start";
 
 //Set a main default redirect (https://domain.xyz) or keep empty
 $fra_config["default_redirect"] 				= "";
 
 //Set Error Routing (404 page)
-$fra_config["error_controller"] 				= "";
-$fra_config["error_action"] 					= "";
+$fra_config["error_controller"] 				= "demo";
+$fra_config["error_action"] 					= "start";
 
 //Set a 404 redirect (https://domain.xyz) or keep empty
 $fra_config["error_redirect"] 					= "";
