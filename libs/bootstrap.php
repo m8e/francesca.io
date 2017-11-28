@@ -75,6 +75,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/domain.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/forced.php");
 
 
+//SERVER PATH VAR DEFINE
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/path.php");
+
+
 //CURRENT ASSETS FOLDER VAR DEFINE
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/assets.php");
 
