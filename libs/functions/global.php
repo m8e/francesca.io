@@ -18,10 +18,10 @@ $fra_config = fra_config + $fra_config;
 
 
 //Errors and default settings validator
-if($fra_config["mail_from"] == "") {
+if($fra_config["mail_from"] == "" && $fra_config["mail_status"] == 1) {
 	die("<b>Error!</b> Wrong or missing 'mail' configuration.");
 }
-if($fra_config["mail_name"] == "") {
+if($fra_config["mail_name"] == "" && $fra_config["mail_status"] == 1) {
 	$fra_config["mail_name"] = $fra_config["mail_from"];
 }
 if(is_numeric($fra_config["logs"])) {

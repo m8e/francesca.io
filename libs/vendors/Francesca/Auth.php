@@ -44,8 +44,8 @@ Class Auth {
 	}
 
 
-	public function password_verify($pass=NULL, $hash=NULL) {
-	/* $fra->auth->password_verify(SECRET PASS)
+	public function password_check($pass=NULL, $hash=NULL) {
+	/* $fra->auth->password_check(SECRET PASS, PASS HASH)
 	***************************************************
 	| This function validates a BCRYPT encrypt
 	| password and return a TRUE or FALSE value.

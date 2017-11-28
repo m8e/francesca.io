@@ -89,16 +89,18 @@ if(fra_config["db_conn"] == 1) {
 //PHPMailer init & configurarion
 Use PHPMailer\PHPMailer;
 Use PHPMailer\Exception;
-$fra->mail = new PHPMailer(true);
-$fra->mail->isSMTP();
-$fra->mail->isHTML(true);
-$fra->mail->setFrom(fra_config["mail_from"], fra_config["mail_name"]);
-$fra->mail->addReplyTo(fra_config["mail_reply"]);
-$fra->mail->SMTPDebug	= fra_config["mail_debug"];
-$fra->mail->Host 		= fra_config["mail_smtp_host"];
-$fra->mail->Port 		= fra_config["mail_smtp_port"];
-$fra->mail->SMTPAuth 	= fra_config["mail_smtp_auth"];
-$fra->mail->SMTPSecure 	= fra_config["mail_smtp_secure"];
-$fra->mail->Username 	= fra_config["mail_user"];
-$fra->mail->Password 	= fra_config["mail_pass"];
+if(fra_config["mail_status"] == 1) {
+	$fra->mail = new PHPMailer(true);
+	$fra->mail->isSMTP();
+	$fra->mail->isHTML(true);
+	$fra->mail->setFrom(fra_config["mail_from"], fra_config["mail_name"]);
+	$fra->mail->addReplyTo(fra_config["mail_reply"]);
+	$fra->mail->SMTPDebug	= fra_config["mail_debug"];
+	$fra->mail->Host 		= fra_config["mail_smtp_host"];
+	$fra->mail->Port 		= fra_config["mail_smtp_port"];
+	$fra->mail->SMTPAuth 	= fra_config["mail_smtp_auth"];
+	$fra->mail->SMTPSecure 	= fra_config["mail_smtp_secure"];
+	$fra->mail->Username 	= fra_config["mail_user"];
+	$fra->mail->Password 	= fra_config["mail_pass"];
+}
 
