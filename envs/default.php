@@ -18,10 +18,10 @@
 ////////////////////////////////////////////////////////////////////////////
 
 //Define an application name... (ex: My Website, Prod App, Staging App, ...)
-$fra_config["name"] 							= "Francesca.io";
+$fra_config["name"] 							= "francesca.io configuration example";
 
-//Define a version of app
-$fra_config["version"] 							= "beta";
+//Define a version of app... (ex: 1.3 or beta, ...)
+$fra_config["version"] 							= "";
 
 //Define the application folder
 $fra_config["folder"] 							= "default";
@@ -155,10 +155,10 @@ $fra_config["debug_mode"] 						= 0;
 ////////////////////////////////////////////////////////////////////////////
 
 //Define Go Live Date (aaaa-mm-yy hh:mm:ss)
-$fra_config["golive_date"] 						= "2018-01-01 00:00:00";
+$fra_config["golive_date"] 						= "2020-01-01 00:00:00";
 
 //Define Go Down Date (aaaa-mm-yy hh:mm:ss)
-$fra_config["godown_date"] 						= "2018-01-03 00:00:00";
+$fra_config["godown_date"] 						= "2022-01-03 00:00:00";
 
 
 //Set Out Of Service Routing
