@@ -24,7 +24,7 @@ $fra_config["name"] 							= "";
 $fra_config["version"] 							= "";
 
 //Define the application folder
-$fra_config["folder"] 							= "";
+$fra_config["folder"] 							= "default";
 
 //Define a global timezone for the app
 $fra_config["timezone"] 						= "Europe/Rome";
@@ -59,7 +59,7 @@ $fra_config["upload_allow"] 					= Array("txt","doc","docx","ods","pdf","jpg","j
 ////////////////////////////////////////////////////////////////////////////
 
 //Framework Database Class (0 - disable, 1 - enable)
-$fra_config["db_conn"] 							= 1;
+$fra_config["db_conn"] 							= 0;
 
 //Set Database Type (mysql, sqlite)					 				
 $fra_config["db_type"] 							= "mysql";	
@@ -91,6 +91,9 @@ $fra_config["db_pass"] 							= "";
 
 //////////////////////////////////////////////////////* SENDMAIL VARS */////
 ////////////////////////////////////////////////////////////////////////////
+
+//Set Send Mail enable/disable
+$fra_config["mail_status"] 						= 0;
 
 //Set Send Mail Debug
 $fra_config["mail_debug"] 						= 0;
