@@ -182,5 +182,25 @@ Class Text {
 	} 
 
 
+	function isotoutf($str=NULL) {
+	/* $fra->text->isotoutf(STRING)
+	***************************************************
+	| This function returns an UTF-8 string from an
+	| ISO-8859-1 encoded string
+	***************************************************/
+		return utf8_encode($str);
+	}
+
+
+	function utftoiso($str=NULL) {
+	/* $fra->text->utftoiso(STRING)
+	***************************************************
+	| This function returns an UTF-8 string from an
+	| ISO-8859-1 encoded string
+	***************************************************/
+		return utf8_decode($str);
+	}
+
+
 }
 
