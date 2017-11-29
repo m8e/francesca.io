@@ -252,8 +252,19 @@ Class File {
 		| This function forces file download
 		***************************************************/
 			if($file != NULL && !headers_sent()) {
-				
-				die();
+				$file = $_SERVER['DOCUMENT_ROOT']."".$file;
+				header('Content-Description: File Transfer');
+				header('Content-Type: application/octet-stream');
+				header('Content-Disposition: attachment; filename='.basename($file));
+				header('Content-Transfer-Encoding: binary');
+				header('Expires: 0');
+				header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+				header('Pragma: public');
+				header('Content-Length: ' . filesize($file));
+				ob_clean();
+				flush();
+				readfile($file);
+				exit;
 			} else {
 				return FALSE;
 			}
