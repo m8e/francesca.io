@@ -252,7 +252,6 @@ Class File {
 		| This function forces file download
 		***************************************************/
 			if($file != NULL && !headers_sent()) {
-				$file = $_SERVER['DOCUMENT_ROOT']."".$file;
 				header('Content-Description: File Transfer');
 				header('Content-Type: application/octet-stream');
 				header('Content-Disposition: attachment; filename='.basename($file));
@@ -271,6 +270,8 @@ Class File {
 		}
 
 
+
+		
 
 }
 
