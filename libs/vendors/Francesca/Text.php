@@ -182,24 +182,14 @@ Class Text {
 	} 
 
 
-	function isotoutf($str=NULL) {
-	/* $fra->text->isotoutf(STRING)
+	function utf8($str=NULL) {
+	/* $fra->text->utf8(STRING)
 	***************************************************
-	| This function returns an UTF-8 string from an
-	| ISO-8859-1 encoded string
+	| This function returns an UTF-8 string
 	***************************************************/
-		return utf8_encode($str);
+		return iconv(mb_detect_encoding($str, mb_detect_order(), true), "UTF-8", $str);
 	}
 
-
-	function utftoiso($str=NULL) {
-	/* $fra->text->utftoiso(STRING)
-	***************************************************
-	| This function returns an UTF-8 string from an
-	| ISO-8859-1 encoded string
-	***************************************************/
-		return utf8_decode($str);
-	}
 
 
 }

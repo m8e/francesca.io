@@ -200,51 +200,66 @@ Class File {
 
 
 
-	function file_custom_header($type="custom", $custom="application/json") {
-	/* $fra->file->file_custom_header(TYPE, CUSTOM)
+	function custom_header($type="custom", $custom="text/html") {
+	/* $fra->file->custom_header(TYPE, CUSTOM)
 	***************************************************
 	| This function returns a custom file header
 	***************************************************/
-	switch ($type) {
-		case "json":
-			$value = "application/json";
-			break;
-		case "jpg":
-			$value = "image/jpg";
-			break;
-		case "jpeg":
-			$value = "image/jpeg";
-			break;
-		case "gif":
-			$value = "image/gif";
-			break;
-		case "png":
-			$value = "image/png";
-			break;
-		case "ico":
-			$value = "image/ico";
-			break;
-		case "excel":
-			$value = "application/vnd.ms-excel; charset=utf-8";
-			break;
-		case "json":
-			$value = "application/json";
-			break;
-		case "custom":
-			$value = $custom;
-			break;
-		default:
-			$value = $custom;
-			break;
+		if(!headers_sent()) {		
+			switch ($type) {
+				case "jpg":
+					$value = "image/jpg";
+					break;
+				case "gif":
+					$value = "image/gif";
+					break;
+				case "png":
+					$value = "image/png";
+					break;
+				case "ico":
+					$value = "image/ico";
+					break;
+				case "pdf":
+					$value = "application/pdf";
+					break;
+				case "excel":
+					$value = "application/vnd.ms-excel; charset=utf-8";
+					break;
+				case "json":
+					$value = "application/json; charset=utf-8";
+					break;
+				case "html":
+					$value = "text/html; charset=utf-8";
+					break;
+				case "custom":
+					$value = $custom;
+					break;
+				default:
+					$value = "text/html; charset=utf-8";
+					break;
+				}
+				return header("Content-Type: ".$value);
+			} else {
+				return FALSE;
+			}
 		}
-		return header("Content-Type: ".$value);
-	}
 
 
 
+		function force_download($file=NULL) {
+		/* $fra->file->force_download(FILE)
+		***************************************************
+		| This function forces file download
+		***************************************************/
+			if($file != NULL && !headers_sent()) {
+				
+				die();
+			} else {
+				return FALSE;
+			}
+		}
 
-
-	
 
 
 }
+
