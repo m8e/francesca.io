@@ -63,5 +63,15 @@ Class Date {
 	}
 
 
+	function change($date=fra_var["current_date"], $request="+1 day", $format="Y-m-d") {
+	/* $fra->date->change(DATE, REQUEST, FORMAT)
+	***************************************************
+	| This function returns as a string a new date 
+	! based on an original date and based on a request.
+	***************************************************/
+		return date($format, strtotime($date ." ". $request));
+	}
+
+
 }
 

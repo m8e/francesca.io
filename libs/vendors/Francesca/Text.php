@@ -153,8 +153,8 @@ Class Text {
 	}
 
 
-	function tobr($text=NULL) {
-	/* $fra->text->tobr(STRING)
+	function brfromn($text=NULL) {
+	/* $fra->text->brfromn(STRING)
 	***************************************************
 	| This function returns STRING \n into <br>.
 	***************************************************/
@@ -162,8 +162,8 @@ Class Text {
 	}
 
 
-	function frombr($text=NULL) {
-	/* $fra->text->frombr(STRING)
+	function brton($text=NULL) {
+	/* $fra->text->brton(STRING)
 	***************************************************
 	| This function returns STRING <br> into \n.
 	***************************************************/

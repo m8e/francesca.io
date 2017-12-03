@@ -137,8 +137,8 @@ Class Http {
 
 
 
-	function response_get($url=NULL) {
-	/* $fra->http->response_get(URL)
+	function responseget($url=NULL) {
+	/* $fra->http->responseget(URL)
 	***************************************************
 	| This function gets and returns an URL header.
 	***************************************************/

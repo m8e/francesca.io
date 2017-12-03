@@ -29,8 +29,8 @@ Class Auth {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////* PASSWORD */////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public function password($pass=NULL) {
-	/* $fra->auth->password(SECRET PASS)
+	public function passwordhash($pass=NULL) {
+	/* $fra->auth->passwordhash(SECRET PASS)
 	***************************************************
 	| This function creates an encrypted
 	| password based on BCRYPT algorit
@@ -44,8 +44,8 @@ Class Auth {
 	}
 
 
-	public function password_check($pass=NULL, $hash=NULL) {
-	/* $fra->auth->password_check(SECRET PASS, PASS HASH)
+	public function passwordcheck($pass=NULL, $hash=NULL) {
+	/* $fra->auth->passwordcheck(SECRET PASS, PASS HASH)
 	***************************************************
 	| This function validates a BCRYPT encrypt
 	| password and return a TRUE or FALSE value.
@@ -63,8 +63,8 @@ Class Auth {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////* TOKEN MANGER */////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public function token() {
-	/* $fra->auth->token()
+	public function tokengenerate() {
+	/* $fra->auth->tokengenerate()
 	***************************************************
 	| This function creates an univoque
 	| token, puts it in "fra_auth_token"
@@ -77,8 +77,8 @@ Class Auth {
 	}
 
 
-	public function token_verify($token=NULL) {
-	/* $fra->auth->token(INPUT TOKEN)
+	public function tokenverify($token=NULL) {
+	/* $fra->auth->tokenverify(INPUT TOKEN)
 	***************************************************
 	| This function verify the input token with
 	| the "fra_auth_token" session and return
@@ -110,8 +110,8 @@ Class Auth {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-	public function otp() {
-	/* $fra->auth->otp()
+	public function otpgenerate() {
+	/* $fra->auth->otpgenerate()
 	***************************************************
 	| This function creates an temporaney
 	| otp code, puts it into a "fra_auth_otp"
@@ -124,7 +124,7 @@ Class Auth {
 	}
 
 
-	public function otp_verify($otp=NULL) {
+	public function otpverify($otp=NULL) {
 	/* $fra->auth->otp_verify(INPUT OTP)
 	***************************************************
 	| This function verify the input opt with the
@@ -240,8 +240,8 @@ Class Auth {
 	}
 
 
-	public function try_verify($max=3) {
-	/* $fra->auth->try_verify(MAX NUMBER)
+	public function tryverify($max=3) {
+	/* $fra->auth->tryverify(MAX NUMBER)
 	***************************************************
 	| This funcion verifies if max value of session try
 	| is equal to current user session try value and

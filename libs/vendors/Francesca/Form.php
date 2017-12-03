@@ -43,8 +43,8 @@ Class Form {
 	}
 
 
-	function clean_light($string=NULL) {
-	/* $fra->form->clean_light(STRING)
+	function cleanlight($string=NULL) {
+	/* $fra->form->cleanlight(STRING)
 	***************************************************
 	| This function cleans a STRING from dangerous 
 	| charters (in light version).

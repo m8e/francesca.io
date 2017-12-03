@@ -26,3 +26,9 @@ if($fra_config["timezone"] == "") {
 //Global timezone setup
 date_default_timezone_set(fra_config["timezone"]);
 
+//current date
+$fra_config["current_date"] = date("Y-m-d");
+
+//current time
+$fra_config["current_time"] = date("H:i:s");
+

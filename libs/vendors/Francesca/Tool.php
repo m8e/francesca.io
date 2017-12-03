@@ -152,7 +152,7 @@ Class Tool {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////* SESSION *//////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public function session_set($vars=NULL) {
+	public function sessionset($vars=NULL) {
 	/* $fra->tool->session_set(VARS)
 	***************************************************
 	| This function adds an array of vars to session.
@@ -169,7 +169,7 @@ Class Tool {
 	}
 
 
-	public function session($var=NULL) {
+	public function sessionread($var=NULL) {
 	/* $fra->tool->session(VAR)
 	***************************************************
 	| This function returns a VAR session value.
@@ -191,7 +191,7 @@ Class Tool {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////* COOKIES *//////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public function cookie_set($name="test", $value="", $time=3600) {
+	public function cookieset($name="test", $value="", $time=3600) {
 	/* $fra->tool->cookie_set(NAME, VALUE)
 	***************************************************
 	| This function sets a cookie with a name, a value
@@ -204,7 +204,7 @@ Class Tool {
 	}
 
 
-	public function cookie_read($name=NULL) {
+	public function cookieread($name=NULL) {
 	/* $fra->tool->cookie_read(NAME)
 	***************************************************
 	| This function returns a cookie value.
@@ -259,6 +259,7 @@ Class Tool {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////* GENERATORS *///////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 	function password($l=12) {
 	/* $fra->tool->password(LENGHT)
 	***************************************************
@@ -273,6 +274,9 @@ Class Tool {
 	    }
 	    return implode($pass);
 	}
+
+
+
 
 
 	function code($l=10) {
@@ -291,24 +295,10 @@ Class Tool {
 	}
 
 
-	function code_alfa($l=8) {
-	/* $fra->tool->code_alfa(LENGHT)
-	***************************************************
-	| This function returns a LENGHT alfanumeric code.
-	***************************************************/
-	    $alphabet = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	    $pass = array();
-	    $alphaLength = strlen($alphabet) - 1;
-	    for ($i = 0; $i < $l; $i++) {
-	        $n = rand(0, $alphaLength);
-	        $pass[] = $alphabet[$n];
-	    }
-	    return implode($pass);
-	}
 
 
-	function code_numeric($l=6) {
-	/* $fra->tool->code_numeric(LENGHT)
+	function coden($l=6) {
+	/* $fra->tool->coden(LENGHT)
 	***************************************************
 	| This function returns a LENGHT numeric code.
 	***************************************************/
@@ -323,6 +313,26 @@ Class Tool {
 	}
 
 
+
+
+	function codean($l=8) {
+	/* $fra->tool->codean(LENGHT)
+	***************************************************
+	| This function returns a LENGHT alfanumeric code.
+	***************************************************/
+	    $alphabet = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $pass = array();
+	    $alphaLength = strlen($alphabet) - 1;
+	    for ($i = 0; $i < $l; $i++) {
+	        $n = rand(0, $alphaLength);
+	        $pass[] = $alphabet[$n];
+	    }
+	    return implode($pass);
+	}
+
+
+
+
 	function unique() {
 	/* $fra->tool->unique()
 	***************************************************
@@ -330,6 +340,8 @@ Class Tool {
 	***************************************************/
 	    return uniqid();
 	}
+
+
 
 
 	function string() {
