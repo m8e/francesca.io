@@ -30,21 +30,21 @@ $fra_config["folder"] 							= "default";
 $fra_config["timezone"] 						= "Europe/Rome";
 
 //Set Logs (0 - no logs, 1 - only errors logs, 2 - all logs)
-$fra_config["logs"] 							= 1;
+$fra_config["logs"] 							= 0;
 
 //Set HTML output minify (0 - no minify, 1 - minify)
-$fra_config["minify"] 							= 1;
+$fra_config["minify"] 							= 0;
 
 //Set Default Routing (home page)
-$fra_config["default_controller"] 				= "demo";
-$fra_config["default_action"] 					= "start";
+$fra_config["default_controller"] 				= "docs";
+$fra_config["default_action"] 					= "index";
 
 //Set a main default redirect (https://domain.xyz) or keep empty
 $fra_config["default_redirect"] 				= "";
 
 //Set Error Routing (404 page)
-$fra_config["error_controller"] 				= "demo";
-$fra_config["error_action"] 					= "start";
+$fra_config["error_controller"] 				= "docs";
+$fra_config["error_action"] 					= "index";
 
 //Set a 404 redirect (https://domain.xyz) or keep empty
 $fra_config["error_redirect"] 					= "";

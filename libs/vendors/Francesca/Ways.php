@@ -12,7 +12,7 @@
 namespace Francesca;
 
 
-Class Root {
+Class Ways {
 /*
 |------------------------------------------------------------------------
 | Auth Root
@@ -27,7 +27,7 @@ Class Root {
 
 
 	function getview() {
-	/* $fra->root->getview()
+	/* $fra->ways->getview()
 	***************************************************
 	| This function includes current controller/action
 	| view into a layout;
@@ -40,7 +40,7 @@ Class Root {
 
 
 	function getsnip($name=NULL) {
-	/* $fra->root->getsnip(NAME)
+	/* $fra->ways->getsnip(NAME)
 	***************************************************
 	| This function includes a page snippet everywehere.
 	***************************************************/

@@ -50,8 +50,8 @@ $fra->text = new Text;
 Use Francesca\Tool;
 $fra->tool = new Tool;
 
-Use Francesca\Root;
-$fra->root = new Root;
+Use Francesca\Ways;
+$fra->ways = new Ways;
 
 
 
