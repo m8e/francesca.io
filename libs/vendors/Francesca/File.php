@@ -31,7 +31,7 @@ Class File {
 	| This function verifies if a FILE exists and
 	| returns a TRUE or FALSE value.
 	***************************************************/
-		if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$file)) {
+		if(file_exists(fra_var["files_path"]."".$file)) {
 			return true;
 		} else {
 			return false;
@@ -56,7 +56,7 @@ Class File {
 	***************************************************
 	| This function reads a FILE and returns a string.
 	***************************************************/
-		$file = $_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$file;
+		$file = fra_var["files_path"]."".$file;
 		if(file_exists($file)) {
 			$return = file_get_contents($file);
 			return $return;
@@ -72,7 +72,7 @@ Class File {
 	| This function creates a FILE with a CONTENT
 	| and returns a string.
 	***************************************************/
-		$file = $_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$file;
+		$file = fra_var["files_path"]."".$file;
 		if(file_exists($file)) {
 			unlink($file);
 		}	
@@ -84,13 +84,13 @@ Class File {
 	}
 
 
-	function create_dir($dir=NULL) {
-	/* $fra->file->create_dir(DIR)
+	function createdir($dir=NULL) {
+	/* $fra->file->createdir(DIR)
 	***************************************************
 	| This function creates a DIR.
 	***************************************************/
-		if(!is_dir($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$dir)) {
-			if(mkdir($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$dir, 0700)) {
+		if(!is_dir(fra_var["files_path"]."".$dir)) {
+			if(mkdir(fra_var["files_path"]."".$dir, 0700)) {
 				return true;
 			} else {
 				return false;
@@ -104,7 +104,7 @@ Class File {
 	***************************************************
 	| This function deletes a FILE.
 	***************************************************/
-		if(unlink($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$file)) {
+		if(unlink(fra_var["files_path"]."".$file)) {
 			return true;
 		} else {
 			return false;
@@ -112,12 +112,12 @@ Class File {
 	}
 
 
-	function delete_dir($dir=NULL) {
-	/* $fra->file->delete_dir(DIR)
+	function deletedir($dir=NULL) {
+	/* $fra->file->deletedir(DIR)
 	***************************************************
 	| This function deletes a DIR.
 	***************************************************/
-		$dir = $_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$dir;
+		$dir = fra_var["files_path"]."".$dir;
 		if(is_dir($dir)) {
 			foreach(scandir($dir) as $file) {
 		    	if ('.' === $file || '..' === $file) continue;
@@ -140,7 +140,7 @@ Class File {
 	| This function lists the files into a DIR and
 	| returns an array.
 	***************************************************/
-		$dir = $_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$dir;
+		$dir = fra_var["files_path"]."".$dir;
 		$root = scandir($dir); 
 		foreach($root as $value) 
 		{ 
@@ -188,8 +188,8 @@ Class File {
 			}
 			if(!empty($fileTempName) && is_uploaded_file($fileTempName)) {
 				$filenewname = $fileonlyname."_".md5("".$fileonlyname."".microtime()."").".".$ext;
-				mkdir($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$folder);
-				move_uploaded_file($fileTempName, $_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/files/".$folder."/".$filenewname."");
+				mkdir(fra_var["files_path"]."".$folder);
+				move_uploaded_file($fileTempName, fra_var["files_path"]."".$folder."/".$filenewname."");
 				$result[$n] = $filenewname;
 			}
 		$n = $n + 1;
@@ -200,8 +200,8 @@ Class File {
 
 
 
-	function custom_header($type="custom", $custom="text/html") {
-	/* $fra->file->custom_header(TYPE, CUSTOM)
+	function heading($type="custom", $custom="text/html") {
+	/* $fra->file->heading(TYPE, CUSTOM)
 	***************************************************
 	| This function returns a custom file header
 	***************************************************/
@@ -246,11 +246,12 @@ Class File {
 
 
 
-		function force_download($file=NULL) {
-		/* $fra->file->force_download(FILE)
+		function forcedownload($file=NULL) {
+		/* $fra->file->forcedownload(FILE)
 		***************************************************
 		| This function forces file download
 		***************************************************/
+			$file = fra_var["files_path"]."".$file;
 			if($file != NULL && !headers_sent()) {
 				header('Content-Description: File Transfer');
 				header('Content-Type: application/octet-stream');
@@ -259,7 +260,7 @@ Class File {
 				header('Expires: 0');
 				header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 				header('Pragma: public');
-				header('Content-Length: ' . filesize($file));
+				header('Content-Length: '.filesize($file));
 				ob_clean();
 				flush();
 				readfile($file);
@@ -270,8 +271,90 @@ Class File {
 		}
 
 
+		function ftpget($localfile=NULL, $remotefile=NULL) {
+		/* $fra->file->ftpget(LOCALFILE, REMOTEFILE)
+		***************************************************
+		| This function lets you to download a remote FTP
+		| file into a local file.
+		***************************************************/
+			if($localfile != NULL && $remotefile != NULL && ftp_get(fra_ftp, fra_var["files_path"]."".$localfile, fra_var["ftp_path"]."".$remotefile, FTP_BINARY)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 
-		
+
+		function ftpput($localfile=NULL, $remotefile=NULL) {
+		/* $fra->file->ftpput(LOCALFILE, REMOTEFILE)
+		***************************************************
+		| This function lets you to upload a local file
+		| into a remote FTP file.
+		***************************************************/
+			if($localfile != NULL && $remotefile != NULL && ftp_put(fra_ftp, fra_var["ftp_path"]."".$remotefile, fra_var["files_path"]."".$localfile, FTP_BINARY)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+
+
+
+		function ftpdel($file=NULL) {
+		/* $fra->file->ftpdel(FILE)
+		***************************************************
+		| This function lets you to delete a remote FPT
+		| file.
+		***************************************************/
+			if($file != NULL && ftp_delete(fra_ftp, fra_var["ftp_path"]."".$file)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+
+
+		function ftpcreatedir($dir=NULL) {
+		/* $fra->file->ftpcreatedir(DIR)
+		***************************************************
+		| This function lets you create a remote FTP dir.
+		***************************************************/
+			if($dir != NULL && ftp_mkdir(fra_ftp, fra_var["ftp_path"]."".$dir)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+
+		function ftpdeletedir($dir=NULL) {
+		/* $fra->file->ftpdeletedir(DIR)
+		***************************************************
+		| This function lets you delete a remote FTP dir.
+		***************************************************/
+			$testtest = ftp_nlist(fra_ftp, fra_var["ftp_path"]."".$dir);
+			foreach ($testtest as $ftest) {
+				ftp_delete(fra_ftp, fra_var["ftp_path"]."/".$ftest);
+				}
+			if(ftp_rmdir(fra_ftp, fra_var["ftp_path"]."/".$dir)) {
+				return true;
+			} else {
+				return false;
+			}
+
+		}
+
+
+		function ftplist($dir=NULL) {
+		/* $fra->file->ftpdeletedir(DIR)
+		***************************************************
+		| This function returns an FTP dir content array.
+		***************************************************/
+			return ftp_nlist(fra_ftp, fra_var["ftp_path"]."".$dir);
+		}
+
 
 }
 

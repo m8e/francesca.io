@@ -52,6 +52,8 @@ $fra->tool = new Tool;
 
 
 
+
+
 /*
 | DATA CLASS INIT AND DB CONN
 | Francesca Framework choose to integrate Medoo (Copyright 2017, Angel Lai)
@@ -74,6 +76,10 @@ if(fra_config["db_conn"] == 1) {
 	    'charset'           => fra_config["db_cset"],
 	    'prefix'            => fra_config["db_pref"]]);
 }
+
+
+
+
 
 
 
@@ -103,4 +109,5 @@ if(fra_config["mail_status"] == 1) {
 	$fra->mail->Username 	= fra_config["mail_user"];
 	$fra->mail->Password 	= fra_config["mail_pass"];
 }
+
 

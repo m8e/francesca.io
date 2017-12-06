@@ -43,7 +43,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/tempconfig.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/permission.php");
 
 
-//PERMISSION FUNCTIONS
+//HTACCESS FUNCTIONS
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/htaccess.php");
 
 
@@ -83,6 +83,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/path.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/assets.php");
 
 
+//CURRENT FILES PATH & FOLDER VAR DEFINE
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/files.php");
+
+
 //URL PARSEL
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/parsel.php");
 
@@ -93,6 +97,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/controller.php");
 
 //ACTION DEFINE
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/action.php");
+
+
+//FTP SERVICE CHECK AND INIT
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/ftp.php");
 
 
 //OUTOFSERVICE MODE

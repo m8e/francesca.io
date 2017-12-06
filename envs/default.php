@@ -21,7 +21,7 @@
 $fra_config["name"] 							= "francesca.io configuration example";
 
 //Define a version of app... (ex: 1.3 or beta, ...)
-$fra_config["version"] 							= "";
+$fra_config["version"] 							= "0.9";
 
 //Define the application folder
 $fra_config["folder"] 							= "default";
@@ -124,6 +124,34 @@ $fra_config["mail_reply"] 						= "";
 
 
 
+
+///////////////////////////////////////////////////////////* FTP VARS */////
+////////////////////////////////////////////////////////////////////////////
+
+//Set FTP service enable/disable
+$fra_config["ftp_status"] 						= 0;
+
+//Set FTP hostname
+$fra_config["ftp_host"] 						= "";
+
+//Set FTP username
+$fra_config["ftp_user"] 						= "";
+
+//Set FTP password
+$fra_config["ftp_pass"]							= "";
+
+//Set FTP port
+$fra_config["ftp_port"] 						= 21;
+
+//Set SSL connection (0 - FTP, 1 - SFTP)
+$fra_config["ftp_sftp"] 						= 0;
+
+//Set FTP base path
+$fra_config["ftp_path"] 						= "";
+
+
+
+
 //////////////////////////////////////////////////* APPLICATION MODES */////
 ////////////////////////////////////////////////////////////////////////////
 
@@ -195,4 +223,6 @@ $fra_config["debug_ipallow"] 					= array("123", "123.xxx.yyy.zzz");
 
 //Set PHP INI Errors View (0 - no, 1 - yes)
 $fra_config["debug_inierror"] 					= 0;
+
+
 
