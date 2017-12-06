@@ -59,7 +59,7 @@ $fra->tool = new Tool;
 | Francesca Framework choose to integrate Medoo (Copyright 2017, Angel Lai)
 | Credits and rights: Angel Lai (Released under the MIT license)
 | For any info: https://medoo.in
-| Version installed here: 1.5.1
+| Version installed here: 1.5.2
 | Thankyou Medoo! :)
 */
 //Medoo init & configurarion

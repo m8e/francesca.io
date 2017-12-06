@@ -253,6 +253,8 @@ Class File {
 		***************************************************/
 			$file = fra_var["files_path"]."".$file;
 			if($file != NULL && !headers_sent()) {
+				ob_clean();
+				ob_end_flush();
 				header('Content-Description: File Transfer');
 				header('Content-Type: application/octet-stream');
 				header('Content-Disposition: attachment; filename='.basename($file));
@@ -261,8 +263,6 @@ Class File {
 				header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 				header('Pragma: public');
 				header('Content-Length: '.filesize($file));
-				ob_clean();
-				flush();
 				readfile($file);
 				exit;
 			} else {
@@ -336,9 +336,9 @@ Class File {
 		***************************************************/
 			$testtest = ftp_nlist(fra_ftp, fra_var["ftp_path"]."".$dir);
 			foreach ($testtest as $ftest) {
-				ftp_delete(fra_ftp, fra_var["ftp_path"]."/".$ftest);
+				ftp_delete(fra_ftp, fra_var["ftp_path"]."".$ftest);
 				}
-			if(ftp_rmdir(fra_ftp, fra_var["ftp_path"]."/".$dir)) {
+			if(ftp_rmdir(fra_ftp, fra_var["ftp_path"]."".$dir)) {
 				return true;
 			} else {
 				return false;

@@ -49,10 +49,6 @@ $fra_config["error_action"] 					= "start";
 //Set a 404 redirect (https://domain.xyz) or keep empty
 $fra_config["error_redirect"] 					= "";
 
-//Extensions file allowed in uplaod	
-$fra_config["upload_allow"] 					= Array("txt","doc","docx","ods","pdf","jpg","jpeg","png","gif","zip");
-
-
 
 
 //////////////////////////////////////////////////////* DATABASE VARS */////
@@ -121,6 +117,16 @@ $fra_config["mail_name"] 						= "";
 //Set Default Send Mail "Reply To" address
 $fra_config["mail_reply"] 						= "";
 
+
+
+
+
+//////////////////////////////////////////////////////* FILES VARS */////
+////////////////////////////////////////////////////////////////////////////
+
+
+//Extensions file allowed in uplaod	
+$fra_config["upload_allow"] 					= Array("txt","doc","docx","ods","pdf","jpg","jpeg","png","gif","zip");
 
 
 
