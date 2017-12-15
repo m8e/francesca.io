@@ -15,9 +15,9 @@ namespace Francesca;
 Class Ways {
 /*
 |------------------------------------------------------------------------
-| Auth Root
+| Auth Ways
 |------------------------------------------------------------------------
-| The Francesca/Root is routing tools
+| The Francesca/Ways is routing tools
 */
 	
 	public function __construct() {
