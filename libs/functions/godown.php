@@ -17,17 +17,17 @@
 if(is_numeric(fra_config["godown_mode"])) {
 	if(fra_config["godown_mode"] == 0 || fra_config["godown_mode"] == 1) {
 	} else {
-		die("<b>Error!</b> Wrong or missing 'go down mode' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'go down mode' configuration.");
 	}
 	if(fra_config["godown_mode"] == 1 && !fra_datevalidation(fra_config["godown_date"])) {
-		die("<b>Error!</b> Wrong or missing 'go down date' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'go down date' configuration.");
 	}
 } else {
-	die("<b>Error!</b> Wrong or missing 'go down mode' configuration.");
+	fra_template("<b>Error!</b> Wrong or missing 'go down mode' configuration.");
 }
 if(fra_config["godown_redirect"] != "") {
 	if(!filter_var(fra_config["godown_redirect"], FILTER_VALIDATE_URL)) {
-		die("<b>Error!</b> Wrong or missing 'go down redirect' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'go down redirect' configuration.");
 	}
 }
 

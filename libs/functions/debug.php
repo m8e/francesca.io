@@ -17,10 +17,10 @@
 if(is_numeric(fra_var["debug_mode"])) {
 	if(fra_var["debug_mode"] == 0 || fra_var["debug_mode"] == 1) {
 		if(empty(fra_var["debug_ipallow"] != "")) {
-			die("<b>Error!</b> Wrong or missing 'debug allow ip' configuration.");
+			fra_template("<b>Error!</b> Wrong or missing 'debug allow ip' configuration.");
 		}
 	} else {
-		die("<b>Error!</b> Wrong or missing 'debug mode' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'debug mode' configuration.");
 	}
 } else {
 	die("<b>Error!</b> Wrong or missing 'debug mode' configuration.");

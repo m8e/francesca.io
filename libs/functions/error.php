@@ -16,7 +16,7 @@
 //Error check
 if(fra_config["error_redirect"] != "") {
 	if(!filter_var(fra_config["error_redirect"], FILTER_VALIDATE_URL)) {
-		die("<b>Error!</b> Wrong or missing 'error redirect' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'error redirect' configuration.");
 	}
 }
 
@@ -45,5 +45,5 @@ if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".
 
 //Route View Safe
 if(!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php") && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
-	die("<b>FATAL ERROR!</b> No output view files found into App folder.");
+	fra_template("<b>FATAL ERROR!</b> No output view files found into App folder.");
 }

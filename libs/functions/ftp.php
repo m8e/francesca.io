@@ -22,11 +22,11 @@ if($fra_config["ftp_status"] == 1) {
     } 
     define("fra_ftp", $fra_ftp);
     if(!fra_ftp) {
-        die("<b>Error!</b> Wrong or missing 'FTP connection' configuration.");
+        fra_template("<b>Error!</b> Wrong or missing 'FTP connection' configuration.");
     }
     $fra_ftp_login = ftp_login(fra_ftp, $fra_config["ftp_user"], $fra_config["ftp_pass"]);
     define("fra_ftp_login", $fra_ftp_login);
     if(!fra_ftp_login) {
-        die("<b>Error!</b> Wrong or missing 'FTP connection' username or password.");
+        fra_template("<b>Error!</b> Wrong or missing 'FTP connection' username or password.");
     }
 }

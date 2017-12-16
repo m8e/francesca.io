@@ -16,7 +16,7 @@
 //Error check
 if(fra_config["default_redirect"] != "") {
 	if(!filter_var(fra_config["default_redirect"], FILTER_VALIDATE_URL)) {
-		die("<b>Error!</b> Wrong or missing 'default redirect' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'default redirect' configuration.");
 	}
 }
 

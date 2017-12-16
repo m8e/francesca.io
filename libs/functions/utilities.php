@@ -8,7 +8,7 @@
 | Released under the MIT license
 |
 |------------------------------------------------------------------------
-| FRAMEWORK BOOTSTRAP UTILITIES FUNCTION
+| FRAMEWORK UTILITIES FUNCTION
 |------------------------------------------------------------------------
 */
 

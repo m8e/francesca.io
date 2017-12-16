@@ -19,6 +19,6 @@ define("fra_config", $fra_config);
 
 //Main folder var validation and error
 if(fra_config["folder"] == "") { 
-	die("<b>Error!</b> Wrong or missing 'folder' configuration.");
+	fra_template("<b>Error!</b> Wrong or missing 'folder' configuration.");
 }
 

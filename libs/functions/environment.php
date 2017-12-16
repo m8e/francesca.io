@@ -24,7 +24,7 @@ if(substr($_SERVER['SERVER_NAME'], 0, 4) == "www.") {
 			if(file_exists($_SERVER['DOCUMENT_ROOT']."/envs/default.php")) {
 				require_once($_SERVER['DOCUMENT_ROOT']."/envs/default.php");
 			} else {
-				die("<b>FATAL ERROR!</b> Environment Configuration File Not Found!");
+				fra_template("<b>FATAL ERROR!</b> Environment Configuration File Not Found!");
 			}
 		}
 	}
@@ -35,7 +35,7 @@ if(substr($_SERVER['SERVER_NAME'], 0, 4) == "www.") {
 		if(file_exists($_SERVER['DOCUMENT_ROOT']."/envs/default.php")) {
 				require_once($_SERVER['DOCUMENT_ROOT']."/envs/default.php");
 			} else {
-				die("<b>FATAL ERROR!</b> Environment Configuration File Not Found!");
+				fra_template("<b>FATAL ERROR!</b> Environment Configuration File Not Found!");
 			}
 	}
 }

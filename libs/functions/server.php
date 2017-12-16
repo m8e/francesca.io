@@ -16,5 +16,5 @@
 
 //Web Server Check
 if(strpos($_SERVER['SERVER_SOFTWARE'], 'Apache') === FALSE) {
-	die("<b>FATAL ERROR!</b> Francesca Framework requires Apache Web Server and you are running on: ".$_SERVER['SERVER_SOFTWARE']);
+	fra_template("<b>FATAL ERROR!</b> Francesca Framework requires Apache Web Server and you are running on: ".$_SERVER['SERVER_SOFTWARE']);
 }

@@ -19,5 +19,5 @@ $fra_source_content = file_get_contents($_SERVER['DOCUMENT_ROOT']."/libs/functio
 $fra_current_content = file_get_contents($_SERVER['DOCUMENT_ROOT']."/.htaccess");
 
 if(!strpos($fra_current_content, $fra_source_content)) {
-	die("<b>FATAL ERROR!</b> .htaccess does not include Francesca Framework directive or they are corrupt.");
+	fra_template("<b>FATAL ERROR!</b> .htaccess does not include Francesca Framework directive or they are corrupt.");
 }

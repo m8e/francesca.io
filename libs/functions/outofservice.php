@@ -17,14 +17,14 @@
 if(is_numeric(fra_config["outofservice_mode"])) {
 	if(fra_config["outofservice_mode"] == 0 || fra_config["outofservice_mode"] == 1) {
 	} else {
-		die("<b>Error!</b> Wrong or missing 'out of service mode' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'out of service mode' configuration.");
 	}
 } else {
-	die("<b>Error!</b> Wrong or missing 'out of service mode' configuration.");
+	fra_template("<b>Error!</b> Wrong or missing 'out of service mode' configuration.");
 }
 if(fra_config["outofservice_redirect"] != "") {
 	if(!filter_var(fra_config["outofservice_redirect"], FILTER_VALIDATE_URL)) {
-		die("<b>Error!</b> Wrong or missing 'out of service redirect' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'out of service redirect' configuration.");
 	}
 }
 

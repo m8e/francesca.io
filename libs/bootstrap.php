@@ -18,6 +18,11 @@
 |
 */
 
+
+//DEFAULT FRAMEWORK TEMPLATE
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/template.php");
+
+
 //WEB SERVER CHECK
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/server.php");
 
@@ -40,10 +45,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/environment.php");
 
 //FRAMEWORK GLOBAL TEMP CONFIG VAR
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/tempconfig.php");
-
-
-//PERMISSION FUNCTIONS
-require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/permission.php");
 
 
 //HTACCESS FUNCTIONS
@@ -140,6 +141,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/global.php");
 
 //TEST DB CONNECTION
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/dbcheck.php");
+
+
+//PERMISSION FUNCTIONS
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/permission.php");
 
 
 //CLASSES INCLUDE

@@ -17,17 +17,17 @@
 if(is_numeric(fra_config["golive_mode"])) {
 	if(fra_config["golive_mode"] == 0 || fra_config["golive_mode"] == 1) {
 	} else {
-		die("<b>Error!</b> Wrong or missing 'go live mode' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'go live mode' configuration.");
 	}
 	if(fra_config["golive_mode"] == 1 && !fra_datevalidation(fra_config["golive_date"])) {
-		die("<b>Error!</b> Wrong or missing 'go live date' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'go live date' configuration.");
 	}
 } else {
-	die("<b>Error!</b> Wrong or missing 'go live mode' configuration.");
+	fra_template("<b>Error!</b> Wrong or missing 'go live mode' configuration.");
 }
 if(fra_config["golive_redirect"] != "") {
 	if(!filter_var(fra_config["golive_redirect"], FILTER_VALIDATE_URL)) {
-		die("<b>Error!</b> Wrong or missing 'go live redirect' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'go live redirect' configuration.");
 	}
 }
 

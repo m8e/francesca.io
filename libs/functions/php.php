@@ -16,6 +16,6 @@
 //Chek PHP Version
 $fra_php_version = substr(phpversion(), 0, 1);
 if($fra_php_version < 7) {
-	die("<b>FATAL ERROR!</b> You are running on a server with ".phpversion()." PHP version. Francesca Framework require PHP 7 or major version!");
+	fra_template("<b>FATAL ERROR!</b> Francesca Framework require PHP 7 or major version and you are running PHP version: ".phpversion());
 }
 

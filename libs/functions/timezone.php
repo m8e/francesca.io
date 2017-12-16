@@ -18,7 +18,7 @@ if($fra_config["timezone"] == "") {
 	$fra_config["timezone"] == "UTC";
 } else {
 	if(!in_array($fra_config["timezone"], DateTimeZone::listIdentifiers(DateTimeZone::ALL), true)) {
-		die("<b>Error!</b> Wrong or missing 'time zone' configuration.");
+		fra_template("<b>Error!</b> Wrong or missing 'time zone' configuration.");
 	}
 }
 
