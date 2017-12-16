@@ -45,7 +45,11 @@ if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1m.tmp")) {
 		        while(($file = readdir($dh)) !== false) { 
 		            if(($file !='.')&&($file !='..')) { 
 		            	if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".$file."/tasks/1m.php")) {
-							require_once($_SERVER['DOCUMENT_ROOT']."/apps/".$file."/tasks/1m.php");
+							$ch = curl_init();
+							curl_setopt($ch, CURLOPT_URL, $url."/apps/".$file."/tasks/1m.php");
+							curl_setopt($ch, CURLOPT_HEADER, 0);
+							$result=curl_exec($ch);
+							curl_close($ch);
 		            	}
 		           	} 
 		        } 
@@ -74,7 +78,11 @@ if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1h.tmp")) {
 		        while(($file = readdir($dh)) !== false) { 
 		            if(($file !='.')&&($file !='..')){ 
 		            	if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".$file."/tasks/1h.php")) {
-							require_once($_SERVER['DOCUMENT_ROOT']."/apps/".$file."/tasks/1h.php");
+							$ch = curl_init();
+							curl_setopt($ch, CURLOPT_URL, $url."/apps/".$file."/tasks/1h.php");
+							curl_setopt($ch, CURLOPT_HEADER, 0);
+							$result=curl_exec($ch);
+							curl_close($ch);
 		            	}
 		           	} 
 		        } 
@@ -104,7 +112,11 @@ if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1d.tmp")) {
 		        while(($file = readdir($dh)) !== false) { 
 		            if(($file !='.')&&($file !='..')){ 
 		            	if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".$file."/tasks/1d.php")) {
-							require_once($_SERVER['DOCUMENT_ROOT']."/apps/".$file."/tasks/1d.php");
+							$ch = curl_init();
+							curl_setopt($ch, CURLOPT_URL, $url."/apps/".$file."/tasks/1d.php");
+							curl_setopt($ch, CURLOPT_HEADER, 0);
+							$result=curl_exec($ch);
+							curl_close($ch);
 		            	}
 		           	} 
 		        } 
