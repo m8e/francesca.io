@@ -80,32 +80,12 @@ Class Http {
 		} else {
 			$auth = true;
 		}
-		if($auth) {
-			switch($_SERVER['REQUEST_METHOD']) {
-				case "PUT":
-					if($method == "PUT") {
-						parse_str(file_get_contents("php://input"),$output);
-					}
-				break;
-				case "POST":
-					if($method == "POST") {
-						parse_str(file_get_contents("php://input"),$output);
-					}
-				break;
-				case "GET":
-					if($method == "GET") {
-						parse_str(file_get_contents("php://input"),$output);
-					}
-				break;
-				case "DELETE":
-					if($method == "DELETE") {
-						parse_str(file_get_contents("php://input"),$output);
-					}
-				break;
-				default:
-					$output["error"] = "HTTP method not supported";
-				break;
-			}
+		if($auth) {		
+			if($method == $_SERVER['REQUEST_METHOD']) {
+				parse_str(file_get_contents("php://input"),$output);
+			} else {
+				$output["error"] = "Invalid Method";
+			}				
 		} else {
 			$output["error"] = "Access denied for ".$sendip;	
 		}
@@ -113,7 +93,6 @@ Class Http {
 			$output["error"] = "Request undefined"; 
 		}
 		return $output;
-
 	}
 
 
