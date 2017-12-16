@@ -18,6 +18,9 @@
 |
 */
 
+//WEB SERVER CHECK
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/server.php");
+
 
 //PHP VERSION CHECK
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/php.php");

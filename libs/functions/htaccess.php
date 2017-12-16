@@ -13,6 +13,7 @@
 */
 
 
+
 //Error check
 $fra_source_content = file_get_contents($_SERVER['DOCUMENT_ROOT']."/libs/functions/htaccess_source.php");
 $fra_current_content = file_get_contents($_SERVER['DOCUMENT_ROOT']."/.htaccess");
