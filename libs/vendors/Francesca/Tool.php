@@ -30,11 +30,11 @@ Class Tool {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////* CUSTOM LOGS *///////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	function logit($name="custom_log") {
-	/* $fra->tool->logit(NAME)
+	function logit($data=NULL, $name="custom_log") {
+	/* $fra->tool->logit(DATA, NAME)
 	***************************************************
 	| This function lets you log everything with a 
-	| custom name.
+	| custom name and a custom array of datas.
 	***************************************************/
 		$fra_log_datet 		= date('Y-m-d - H:i:s');
 		$fra_log_wsurl 		= "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
@@ -55,7 +55,7 @@ Class Tool {
 		} else {
 			$fra_log_current = "";
 		}
-		$fra_log_current   .= "". $fra_log_datet ."\n-----------------------------------------\nURL: ". $fra_log_wsurl . "\nUSER: ".$fra_log_usrip."\n".$fra_log_usrag."\n\nREQUEST:\n".print_r($fra_log_varrq, true)."\nSESSIONS:\n".print_r($fra_log_varss,true)."\nDB LOGS:\n".print_r($fra_log_dblgs, true)."\nDB ERROR:\n".print_r($fra_log_dberr, true)."\n-----------------------------------------\n\n";
+		$fra_log_current   .= "". $fra_log_datet ."\n-----------------------------------------\nURL: ". $fra_log_wsurl . "\nUSER: ".$fra_log_usrip."\n".$fra_log_usrag."\n\nCUSTOM DATA:\n".print_r($data, true)."\nREQUEST:\n".print_r($fra_log_varrq, true)."\nSESSIONS:\n".print_r($fra_log_varss,true)."\nDB LOGS:\n".print_r($fra_log_dblgs, true)."\nDB ERROR:\n".print_r($fra_log_dberr, true)."\n-----------------------------------------\n\n";
 		file_put_contents($fra_log_file, $fra_log_current);
 	}
 
