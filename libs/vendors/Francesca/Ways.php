@@ -32,6 +32,10 @@ Class Ways {
 	| This function includes current controller/action
 	| view into a layout;
 	***************************************************/
+
+		//import global core class
+		global $fra;
+
 		if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/views/".fra_var["controller"]."/".fra_var["action"].".php")) {
 			require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/views/".fra_var["controller"]."/".fra_var["action"].".php");
 		}
@@ -44,6 +48,10 @@ Class Ways {
 	***************************************************
 	| This function includes a page snippet everywehere.
 	***************************************************/
+
+		//import global core class
+		global $fra;
+
 		if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/snippets/".$name.".php")) {
 			require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/snippets/".$name.".php");
 		}
