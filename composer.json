@@ -1,0 +1,26 @@
+{
+	"name": "Francesca Framework",
+	"type": "framework",
+	"description": "modern and lightest PHP framework developed with love for developers",
+	"keywords": ["PHP", "MVC", "web", "site", "application", "API", "framework", "database", "lightweight", "PHP framework", "MySQL", "SQLite", "dev"],
+	"homepage": "https://francesca.io",
+	"license": "MIT",
+	"authors": [
+		{"name": "Andrea Pollastri", "email": "scrivi@andreapollastri.net"}
+	],
+	"require": {
+		"php": ">=7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Francesca\\": "libs/system"
+		}
+	},
+	"config": {
+	"vendor-dir": "libs/vendors"
+	},
+	"require": {
+	"catfan/Medoo": "1.5.3",
+	"phpmailer/phpmailer": "5.2.9"
+	}
+}

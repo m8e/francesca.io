@@ -111,8 +111,8 @@ Class Form {
 	}
 
 
-	function ispresent($string=NULL, $word=NULL) {
-	/* $fra->form->ispresent(STRING, WORD)
+	function isinto($string=NULL, $word=NULL) {
+	/* $fra->form->isinto(STRING, WORD)
 	***************************************************
 	| This function verifies if in a STRING there is
 	| one (or more) WORD returning TRUE or FALSE value.
@@ -125,8 +125,8 @@ Class Form {
 	}
 
 
-	function ismore($string=NULL, $long=NULL) {
-	/* $fra->form->ismore(STRING, LONG)
+	function ismin($string=NULL, $long=NULL) {
+	/* $fra->form->ismim(STRING, LONG)
 	***************************************************
 	| This function verifies if a STRING is minium LONG
 	| and returns TRUE or FALSE value.

@@ -57,5 +57,4 @@ Class Ways {
 		}
 	}
 
-
 }
