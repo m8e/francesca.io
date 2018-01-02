@@ -34,7 +34,7 @@ Class Tool {
 	/* $fra->tool->logit(DATA, NAME)
 	***************************************************
 	| This function lets you log everything with a 
-	| custom name and a custom array of datas.
+	| custom name and a custom array of data.
 	***************************************************/
 		$fra_log_datet 		= date('Y-m-d - H:i:s');
 		$fra_log_wsurl 		= "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
@@ -63,6 +63,23 @@ Class Tool {
 
 
 
+	function logitlight($data=NULL, $name="custom_log") {
+	/* $fra->tool->logitlight(DATA, NAME)
+	***************************************************
+	| This function lets you log a custom array of data
+	| with a custom name.
+	***************************************************/
+		$fra_log_datet 		= date('Y-m-d - H:i:s');
+		$fra_log_wsurl 		= "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+		$fra_log_file 		= $_SERVER['DOCUMENT_ROOT']."/logs/".date('Ymd')."_".fra_var["domain"]."_".$name."_light.log";
+		if(file_exists($fra_log_file)) {
+			$fra_log_current = file_get_contents($fra_log_file);
+		} else {
+			$fra_log_current = "";
+		}
+		$fra_log_current   .= "". $fra_log_datet ."\n-----------------------------------------\nURL: ". $fra_log_wsurl . "\n\nCUSTOM DATA:\n".print_r($data, true)."\n-----------------------------------------\n\n";
+		file_put_contents($fra_log_file, $fra_log_current);
+	}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////* NET *//////////

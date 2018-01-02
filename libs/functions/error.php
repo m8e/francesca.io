@@ -20,7 +20,6 @@ if(fra_config["error_redirect"] != "") {
 	}
 }
 
-
 //Error manager
 if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php") && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php"))) {
 		if(fra_config["error_redirect"] != "") {
@@ -47,3 +46,4 @@ if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".
 if(!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php") && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
 	fra_template_404();
 }
+

@@ -12,9 +12,8 @@
 |------------------------------------------------------------------------
 */
 
-
 //Error log creator
-if($fra_config["logs"] != 0 and fra_var["error"] != "") {
+if($fra_config["logs"] != 0 && fra_var["error"] != "") {
 	$fra_log_datet 		= date('Y-m-d - H:i:s');
 	$fra_log_wsurl 		= "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 	$fra_log_usrip 		= $_SERVER['REMOTE_ADDR'];
