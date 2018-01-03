@@ -3,7 +3,6 @@
 /*
 | Francesca Framework
 | https://francesca.io
-| Version 0.9
 |
 | Copyright 2017, Andrea Pollastri
 | Released under the MIT license
