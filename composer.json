@@ -1,5 +1,5 @@
 {
-	"name": "Francesca Framework",
+	"name": "andreapollastri/francescaframework",
 	"type": "framework",
 	"description": "modern and lightest PHP framework developed with love for developers",
 	"keywords": ["PHP", "MVC", "web", "site", "application", "API", "framework", "database", "lightweight", "PHP framework", "MySQL", "SQLite", "dev"],
