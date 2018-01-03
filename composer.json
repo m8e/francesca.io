@@ -8,9 +8,9 @@
 	"authors": [
 		{"name": "Andrea Pollastri", "email": "scrivi@andreapollastri.net"}
 	],
-	"require": {
-		"php": ">=7.0"
-	},
+    "require": {
+        "php": ">=7.1",
+    },
 	"autoload": {
 		"psr-4": {
 			"Francesca\\": "libs/classes"
