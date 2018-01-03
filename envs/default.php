@@ -36,15 +36,15 @@ $fra_config["logs"] 							= 1;
 $fra_config["minify"] 							= 0;
 
 //Set Default Routing (home page)
-$fra_config["default_controller"] 				= "docs";
-$fra_config["default_action"] 					= "index";
+$fra_config["default_controller"] 				= "demo";
+$fra_config["default_action"] 					= "start";
 
 //Set a main default redirect (https://domain.xyz) or keep empty
 $fra_config["default_redirect"] 				= "";
 
 //Set Error Routing (404 page)
-$fra_config["error_controller"] 				= "error";
-$fra_config["error_action"] 					= "index";
+$fra_config["error_controller"] 				= "demo";
+$fra_config["error_action"] 					= "start";
 
 //Set a 404 redirect (https://domain.xyz) or keep empty
 $fra_config["error_redirect"] 					= "";
@@ -70,7 +70,7 @@ $fra_config["db_host"] 							= "localhost";
 $fra_config["db_port"] 							= "3306";	
 
 //Set DB name				
-$fra_config["db_name"] 							= "test";
+$fra_config["db_name"] 							= "";
 
 //Set DB table_prefix
 $fra_config["db_pref"] 							= "";	
@@ -79,8 +79,8 @@ $fra_config["db_pref"] 							= "";
 $fra_config["db_cset"] 							= "utf-8";
 
 //Set DB username/password				
-$fra_config["db_user"] 							= "root";					
-$fra_config["db_pass"] 							= "And_86-mi";					
+$fra_config["db_user"] 							= "";					
+$fra_config["db_pass"] 							= "";					
 
 
 
