@@ -29,7 +29,7 @@ if(fra_var["db_conn"] == 1) {
 			$fra_var_db_host = fra_var["db_host"]."".$fra_var_db_host;
 			$fra_con = mysqli_connect($fra_var_db_host,fra_var["db_user"],fra_var["db_pass"],fra_var["db_name"]);
 			if(mysqli_connect_error()) {
-				fra_template("<b>Error!</b> Database Connection Error: <i>".mysqli_connect_error(). "</i>.");
+				fra_template("<b>Error!</b> Database Connection Error: <i>".mysqli_connect_error(). "</i>");
 			}
 		}
 	} else {

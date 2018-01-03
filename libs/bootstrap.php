@@ -23,6 +23,10 @@
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/template.php");
 
 
+//COMPOSER CHECK
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/composer.php");
+
+
 //WEB SERVER CHECK
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/server.php");
 

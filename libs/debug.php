@@ -31,9 +31,9 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) die();
 	<h2>FRANCESCA FRAMEWORK DEBUG AREA</h2>           
 	<h3><span style="font-size:12px !important;">Yes! you can use also < ?php? > =) enjoy it...</span></h3>
 	<?php
-		$devfile = fopen("".$_SERVER['DOCUMENT_ROOT']."/temp/debug.dev", "r") or die("Unable to open debug file!");
+		$devfile = file_get_contents("".$_SERVER['DOCUMENT_ROOT']."/temp/debug.dev", "r") or die("Unable to open debug file!");
 		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['devmode'])) {
-			$myfile = fopen("".$_SERVER['DOCUMENT_ROOT']."/temp/debug.dev", "w") or die("Unable to open debug file!");
+			$myfile = file_get_contents("".$_SERVER['DOCUMENT_ROOT']."/temp/debug.dev", "w") or die("Unable to open debug file!");
 			$txt = $_POST['devcode'];
 				if($txt == "") { $txt = "Hello World!"; }
 				fwrite($myfile, $txt);

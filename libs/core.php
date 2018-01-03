@@ -75,7 +75,8 @@ if(fra_config["db_conn"] == 1) {
 	    'username'          => fra_config["db_user"],
 	    'password'          => fra_config["db_pass"],
 	    'charset'           => fra_config["db_cset"],
-	    'prefix'            => fra_config["db_pref"]]);
+	    'prefix'            => fra_config["db_pref"]
+	]);
 }
 
 
