@@ -15,6 +15,6 @@
 
 
 //Check autoloader
-if(!file_exists($_SERVER['DOCUMENT_ROOT']."/libs/vendors/autoload.php") || !file_exists($_SERVER['DOCUMENT_ROOT']."/composer.lock")) {
-	fra_template("<b>FATAL ERROR!</b> You have to run '<i>composer update</i>' CLI to install dependences and generate autoload class.");
+if(!file_exists($_SERVER['DOCUMENT_ROOT']."/libs/vendors/autoload.php")) {
+	fra_template("<b>FATAL ERROR!</b> You have to install dependency classes running '<i>composer update</i>' CLI.<br>If you can't use CLI or composer, you can do it manually uploading vendors classes into 'vendors/Medoo' and 'vendors/PHPMailer' folders,<br>moving 'libs/classes' folder files into 'vendors/Francesca' folder and activating alternative autoload class in vendors folder.");
 }
