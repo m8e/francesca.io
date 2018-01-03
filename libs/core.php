@@ -95,8 +95,10 @@ if(fra_config["db_conn"] == 1) {
 | Thankyou PHPMailer! :)
 */
 //PHPMailer init & configurarion
-Use PHPMailer\PHPMailer;
-Use PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 if(fra_config["mail_status"] == 1) {
 	$fra->mail = new PHPMailer(true);
 	$fra->mail->isSMTP();
