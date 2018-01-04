@@ -16,8 +16,6 @@
 | with a minute call to this page (domain.xyz/cron.php).
 | All tasks istructions will be put into respective 1m.php, 1h.php or
 | 1d.php files in app tasks folder.
-| Tasks pages don't use any main framework directives and functions.
-|
 |
 */
 
