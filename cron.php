@@ -21,6 +21,19 @@
 
 
 
-//FRANCESCA.IO FRAMEWORK TASKS SCRIPT INCLUDE
-require_once($_SERVER['DOCUMENT_ROOT']."/libs/tasks.php");
+//CLI CHECK
+if(php_sapi_name() == "cli" || strpos(php_sapi_name(), "cgi") != TRUE) {
 
+
+	//FRANCESCA.IO FRAMEWORK CLI-TASKS SCRIPT INCLUDE
+	require(__DIR__ ."/libs/functions/croncli.php");
+
+
+} else {
+
+
+	//FRANCESCA.IO FRAMEWORK TASKS SCRIPT INCLUDE
+	require_once($_SERVER['DOCUMENT_ROOT']."/libs/tasks.php");
+
+
+}
