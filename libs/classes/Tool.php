@@ -58,6 +58,34 @@ Class Tool {
 
 
 
+	function combinations($arrays=Array(), $i=0) {
+	/* $fra->tool->combinations(ARRAYS)
+	***************************************************
+	| This functions takes an array of arrays and
+	| combines them into a multi-array matrix.
+	***************************************************/
+		if (!isset($arrays[$i])) {
+                return array();
+            }
+            if ($i == count($arrays) - 1) {
+                return $arrays[$i];
+            }
+
+            $tmp = $this->combinations($arrays, $i + 1);
+
+            $result = array();
+
+            foreach ($arrays[$i] as $v) {
+                foreach ($tmp as $t) {
+                    $result[] = is_array($t) ? 
+                        array_merge(array($v), $t) :
+                        array($v, $t);
+                }
+            }
+
+        return $result;
+	}
+
 
 
 
