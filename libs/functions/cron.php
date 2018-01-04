@@ -18,7 +18,7 @@
 
 //EVERY MINUTE FUNCTION
 if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1m-".fra_var["folder"].".tmp")) {
-	$fra_tasks_read = fopen($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1m-".fra_var["folder"].".tmp");
+	$fra_tasks_read = file_get_contents($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1m-".fra_var["folder"].".tmp");
 	if($fra_tasks_read != date("i")) {
 		$fra_tasks_create = fopen($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1m-".fra_var["folder"].".tmp","w");
 		fwrite($fra_tasks_create,date("i"));
@@ -38,7 +38,7 @@ if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1m-".fra_var["folder"].
 
 //EVERY HOUR FUNCTION
 if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1h-".fra_var["folder"].".tmp")) {
-	$fra_tasks_read = fopen($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1h-".fra_var["folder"].".tmp");
+	$fra_tasks_read = file_get_contents($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1h-".fra_var["folder"].".tmp");
 	if($fra_tasks_read != date("H")) {
 		$fra_tasks_create = fopen($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1h-".fra_var["folder"].".tmp","w");
 		fwrite($fra_tasks_create,date("H"));
@@ -59,7 +59,7 @@ if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1h-".fra_var["folder"].
 
 //EVERY HOUR FUNCTION
 if(file_exists($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1d-".fra_var["folder"].".tmp")) {
-	$fra_tasks_read = fopen($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1d-".fra_var["folder"].".tmp");
+	$fra_tasks_read = file_get_contents($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1d-".fra_var["folder"].".tmp");
 	if($fra_tasks_read != date("d")) {
 		$fra_tasks_create = fopen($_SERVER['DOCUMENT_ROOT']."/temp/fra_cron_1d-".fra_var["folder"].".tmp","w");
 		fwrite($fra_tasks_create,date("d"));
