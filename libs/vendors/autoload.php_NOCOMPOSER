@@ -18,6 +18,13 @@
 */
 
 
+/*
+IMPORTANT NOTICE!
+USE THIS PAGE ONLY IF YOU ARE NOT ABLE USE COMPOSER.
+ALL VENDORS MUST BE MANUALLY INSTALLED INTO THIS DIRECTORY USING SCHEMA: 
+NameSpaceFolder/NamespacePage.php (with Capitalize letters).
+*/
+
 spl_autoload_register(function($className) {
 /*
 |------------------------------------------------------------------------
