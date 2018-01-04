@@ -3,7 +3,6 @@
 /*
 | Francesca Framework
 | https://francesca.io
-| Version 0.9
 |
 | Copyright 2017, Andrea Pollastri
 | Released under the MIT license
@@ -21,7 +20,7 @@
 $fra_config["name"] 							= "francesca.io configuration example";
 
 //Define a version of app... (ex: 1.3 or beta, ...)
-$fra_config["version"] 							= "0.9";
+$fra_config["version"] 							= "1";
 
 //Define the application folder
 $fra_config["folder"] 							= "default";
@@ -30,7 +29,7 @@ $fra_config["folder"] 							= "default";
 $fra_config["timezone"] 						= "Europe/Rome";
 
 //Set Logs (0 - no logs, 1 - only errors logs, 2 - all logs)
-$fra_config["logs"] 							= 1;
+$fra_config["logs"] 							= 0;
 
 //Set HTML output minify (0 - no minify, 1 - minify)
 $fra_config["minify"] 							= 0;
@@ -43,8 +42,8 @@ $fra_config["default_action"] 					= "start";
 $fra_config["default_redirect"] 				= "";
 
 //Set Error Routing (404 page)
-$fra_config["error_controller"] 				= "demo";
-$fra_config["error_action"] 					= "start";
+$fra_config["error_controller"] 				= "";
+$fra_config["error_action"] 					= "";
 
 //Set a 404 redirect (https://domain.xyz) or keep empty
 $fra_config["error_redirect"] 					= "";
@@ -220,11 +219,11 @@ $fra_config["godown_redirect"] 					= "";
 
 
 //Set App Preview Allow IP list
-$fra_config["preview_ipallow"] 					= array("123");
+$fra_config["preview_ipallow"] 					= array();
 
 
 //Set Debud Allow IP list
-$fra_config["debug_ipallow"] 					= array("127.0.0.1");
+$fra_config["debug_ipallow"] 					= array();
 
 
 //Set PHP INI Errors View (0 - no, 1 - yes)
