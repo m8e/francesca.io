@@ -35,17 +35,17 @@ if($argv[2] != "") {
 
 	switch ($argv[1]) {
 		case "createapp":
-			if(!is_dir(__DIR__ ."/apps/".$argv[2])){
-				mkdir(__DIR__ ."/apps/".$argv[2]);
-				xcopy(__DIR__ ."/libs/sources/app", __DIR__ ."/apps/".$argv[2]);
+			if(!is_dir(__DIR__ ."/../../apps/".$argv[2])){
+				mkdir(__DIR__ ."/../../apps/".$argv[2]);
+				xcopy(__DIR__ ."/../../libs/sources/app", __DIR__ ."/../../apps/".$argv[2]);
 				echo "App '".$argv[2]."' created.";
 			} else {
 				echo "App '".$argv[2]."' already exists.";
 			}
 			break;
 		case "createenv":
-			if(!file_exists(__DIR__ ."/envs/".$argv[2].".php")) {
-				copy(__DIR__ ."/libs/sources/env/environment.php", __DIR__ ."/envs/".$argv[2].".php");
+			if(!file_exists(__DIR__ ."/../../envs/".$argv[2].".php")) {
+				copy(__DIR__ ."/../../libs/sources/env/environment.php", __DIR__ ."/../../envs/".$argv[2].".php");
 				echo "Env '".$argv[2]."' created.";
 			} else {
 				echo "Env '".$argv[2]."' already exists.";
@@ -60,8 +60,8 @@ if($argv[2] != "") {
 
 	switch ($argv[1]) {
 		case "htreset":
-			unlink(__DIR__ ."/.htaccess");
-			copy(__DIR__ ."/libs/sources/hta/htaccess.php", __DIR__ ."/.htaccess");
+			unlink(__DIR__ ."/../../.htaccess");
+			copy(__DIR__ ."/../../libs/sources/hta/htaccess.php", __DIR__ ."/../../.htaccess");
 			echo ".htaccess was restored.";
 			break;
 		default:
