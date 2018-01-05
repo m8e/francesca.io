@@ -67,21 +67,21 @@ if($argv[2] != "") {
 			if(!is_dir(__DIR__ ."/../../apps/".$argv[2])){
 				mkdir(__DIR__ ."/../../apps/".$argv[2]);
 				xcopy(__DIR__ ."/../../libs/sources/app", __DIR__ ."/../../apps/".$argv[2]);
-				echo "App '".$argv[2]."' created.";
+				echo "App '".$argv[2]."' created.\n";
 			} else {
-				echo "App '".$argv[2]."' already exists.";
+				echo "App '".$argv[2]."' already exists.\n";
 			}
 			break;
 		case "createenv":
 			if(!file_exists(__DIR__ ."/../../envs/".$argv[2].".php")) {
 				copy(__DIR__ ."/../../libs/sources/env/environment.php", __DIR__ ."/../../envs/".$argv[2].".php");
-				echo "Env '".$argv[2]."' created.";
+				echo "Env '".$argv[2]."' created.\n";
 			} else {
-				echo "Env '".$argv[2]."' already exists.";
+				echo "Env '".$argv[2]."' already exists.\n";
 			}
 			break;
 		default:
-			echo "Command not found.";
+			echo "Command not found.\n";
 			break;
 	}
 
@@ -92,11 +92,11 @@ if($argv[2] != "") {
 		case "htreset":
 			unlink(__DIR__ ."/../../.htaccess");
 			copy(__DIR__ ."/../../libs/sources/hta/htaccess.php", __DIR__ ."/../../.htaccess");
-			echo ".htaccess was restored.";
+			echo ".htaccess was restored.\n";
 			break;
 		case "logreset":
 			emptydir(__DIR__ ."/../../logs/", ".log");
-			echo "Logs cache is now empty.";
+			echo "Logs cache is now empty.\n";
 			break;
 		case "help":
 			echo "\n#########################################\n";
@@ -108,7 +108,7 @@ if($argv[2] != "") {
 			echo "'createapp APPNAME'\nLets you create an empty app with a custom APPNAME into apps folder.\n\n";
 			break;	
 		default:
-			echo "Command not found.";
+			echo "Command not found.\n";
 			break;
 	}
 
