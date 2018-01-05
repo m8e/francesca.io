@@ -30,6 +30,24 @@ function xcopy($src, $dest) {
     }
 }
 
+function emptydir($dirpath, $ext) {
+  $handle = opendir($dirpath);
+  while (($file = readdir($handle)) !== false) {
+    if (substr($file, -strlen($ext)) == $ext) {
+      @unlink($dirpath . $file);
+    }
+  }
+  closedir($handle);
+}
+
+
+if($argv[1] == "") {
+	echo "Welcome in Francesca Framework CLI tool.\nRead docs @ francesca.io website to discover 'special commands'.\n\nEnjoy :)\n";
+	die();
+}
+
+
+
 //CLI COMMANDS CASES
 if($argv[2] != "") {
 
@@ -63,6 +81,10 @@ if($argv[2] != "") {
 			unlink(__DIR__ ."/../../.htaccess");
 			copy(__DIR__ ."/../../libs/sources/hta/htaccess.php", __DIR__ ."/../../.htaccess");
 			echo ".htaccess was restored.";
+			break;
+		case "logreset":
+			emptydir(__DIR__ ."/../../logs/", ".log");
+			echo "Logs cache is now empty.";
 			break;
 		default:
 			echo "Command not found.";
