@@ -29,12 +29,15 @@ if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".
 		$fra_config["controller"] 	= fra_config["error_controller"];
 		$fra_config["action"] 		= fra_config["error_action"];
 		if(isset($_GET["fra_error"])) {
+			header("HTTP/1.0 ".$_GET["fra_error"]." ERROR");   
 			$fra_config["error"]	= $_GET["fra_error"];
 		} else {
+			header("HTTP/1.0 404 FILE NOT FOUND");
 			$fra_config["error"]	= 404;
 		}
 } else {
 	if($fra_config["controller"] == fra_config["error_controller"] && $fra_config["action"] == fra_config["error_action"]) {
+		header("HTTP/1.0 404 FILE NOT FOUND");
 		$fra_config["error"]		= 404;
 	} else {
 		$fra_config["error"]		= ""; 	//empty error var
@@ -44,6 +47,7 @@ if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".
 
 //Route View Safe
 if(!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/views/".$fra_config["controller"]."/".$fra_config["action"].".php") && !file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/middlewares/".$fra_config["controller"]."/".$fra_config["action"].".php")) {
+	header("HTTP/1.0 404 FILE NOT FOUND");   
 	fra_template_404();
 }
 
