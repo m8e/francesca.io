@@ -18,6 +18,8 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 //CLI FUNCTIONS
+
+//Massive copy function
 function xcopy($src, $dest) {
     foreach (scandir($src) as $file) {
         if (!is_readable($src . '/' . $file)) continue;
@@ -30,6 +32,7 @@ function xcopy($src, $dest) {
     }
 }
 
+//Empty dir function
 function emptydir($dirpath, $ext) {
   $handle = opendir($dirpath);
   while (($file = readdir($handle)) !== false) {
@@ -48,7 +51,7 @@ if($argv[1] == "") {
 
 
 
-//CLI COMMANDS CASES
+//2 ARGS CLI COMMANDS CASES
 if($argv[2] != "") {
 
 	switch ($argv[1]) {
@@ -74,6 +77,7 @@ if($argv[2] != "") {
 			break;
 	}
 
+//1 ARG CLI COMMANDS CASES
 } else {
 
 	switch ($argv[1]) {
