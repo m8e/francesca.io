@@ -42,7 +42,7 @@ function emptydir($dirpath, $ext) {
 
 
 if($argv[1] == "") {
-	echo "Welcome in Francesca Framework CLI tool.\nRead docs @ francesca.io website to discover 'special commands'.\n\nEnjoy :)\n";
+	echo "Welcome in Francesca Framework CLI.\nRead docs @ francesca.io website to discover 'special commands'.\n\nEnjoy Francesca ;)\n";
 	die();
 }
 
