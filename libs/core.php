@@ -20,11 +20,9 @@
 */
 
 
-
-//Main "fra" class istance
+//Main "fra" singleton class istance
 Use Francesca\Core;
 $fra = Core::instance();
-
 
 
 //Framework classes init
@@ -53,13 +51,11 @@ Use Francesca\Ways;
 $fra->ways = new Ways;
 
 
-
 /*
 | DATA CLASS INIT AND DB CONN
 | Francesca Framework choose to integrate Medoo (Copyright 2017, Angel Lai)
 | Credits and rights: Angel Lai (Released under the MIT license)
 | For any info: https://medoo.in
-| Version installed here: 1.5.2
 | Thankyou Medoo! :)
 */
 //Medoo init & configurarion
@@ -79,25 +75,18 @@ if(fra_config["db_conn"] == 1) {
 }
 
 
-
-
-
-
-
 /*
 | MAIL INIT AND DEFAULT CONFIG
 | Francesca Framework choose to integrate PHPMailer
 | (Copyright 2017: Marcus Bointon, Jim Jagielski, Andy Prevost)
 | Released under GNU Lesser General Public License
 | For any info: https://github.com/PHPMailer/PHPMailer/
-| Version installed here: 5.5
 | Thankyou PHPMailer! :)
 */
 //PHPMailer init & configurarion
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
 if(fra_config["mail_status"] == 1) {
 	$fra->mail = new PHPMailer(true);
 	$fra->mail->isSMTP();
@@ -112,5 +101,4 @@ if(fra_config["mail_status"] == 1) {
 	$fra->mail->Username 	= fra_config["mail_user"];
 	$fra->mail->Password 	= fra_config["mail_pass"];
 }
-
 

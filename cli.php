@@ -10,12 +10,12 @@
 |
 |
 |------------------------------------------------------------------------
-| Cli manager - cli.php
+| CLI manager - cli.php
 |------------------------------------------------------------------------
-| You can use php cli "special commands" to manage hostnames or create
-| envs or apps into Francesca Framework.
+| This page lets you use php CLI Francesca Framework "special commands".
 |
 */
+
 
 //CLI CHECK
 if(PHP_SAPI == 'cli') {
@@ -25,8 +25,9 @@ if(PHP_SAPI == 'cli') {
 
 } else {
 
-	//HTTP MESSAGGE
+	//FRANCESCA.IO FRAMEWORK CLI PAGE HTTP MESSAGGE
 	require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/template.php");
 	fra_template("<b>ERROR!</b> CLI tools are not enable by HTTP requests!");
 
 }
+
