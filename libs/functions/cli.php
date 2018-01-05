@@ -45,7 +45,15 @@ function emptydir($dirpath, $ext) {
 
 
 if($argv[1] == "") {
-	echo "Welcome in Francesca Framework CLI.\nRead docs @ francesca.io website to discover 'special commands'.\n\nEnjoy Francesca ;)\n";
+	echo "\n#########################################\n";
+	echo "##                                    ##\n";
+	echo "## WELCOME IN FRANCESCA FRAMEWORK CLI ##\n";
+	echo "##                                    ##\n";
+	echo "## Digit 'help' for fra commands list ##\n";
+	echo "##                                    ##\n";
+	echo "##         Enjoy Francesca ;)         ##\n";
+	echo "##                                    ##\n";
+	echo "#########################################\n\n";
 	die();
 }
 
@@ -90,6 +98,15 @@ if($argv[2] != "") {
 			emptydir(__DIR__ ."/../../logs/", ".log");
 			echo "Logs cache is now empty.";
 			break;
+		case "help":
+			echo "\n#########################################\n";
+			echo "## Francesca Framework CLI HELP GUIDE ##\n";
+			echo "#########################################\n\n";
+			echo "'htreset'\nLets you restore original .htaccess file.\n\n";
+			echo "'logreset'\nLets you flush logs cache into logs directory.\n\n";
+			echo "'createenv HOSTNAME'\nLets you create an environment configuration file for a determinate HOSTNAME into envs folder.\n\n";
+			echo "'createapp APPNAME'\nLets you create an empty app with a custom APPNAME into apps folder.\n\n";
+			break;	
 		default:
 			echo "Command not found.";
 			break;
