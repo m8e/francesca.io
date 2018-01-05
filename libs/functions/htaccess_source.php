@@ -1,3 +1,5 @@
+########## START - FRANCESCA FRAMEWORK DIRECTIVE - DO NOT MODIFY ##########
+
 IndexIgnore 		*
 Options 			-Indexes
 RewriteEngine 		On
@@ -22,6 +24,17 @@ RewriteRule 		^libs/.*\.(php)$  						/
 RewriteRule 		^logs/.*\.(php)$  						/
 RewriteRule 		^task/.*\.(php)$  						/
 RewriteRule 		^temp/.*\.(php)$						/
+RewriteRule 		^fra 									/
+RewriteRule 		^FRA									/
+RewriteRule 		^version								/
+RewriteRule 		^VERSION								/
+RewriteRule 		^licence								/
+RewriteRule 		^LICENCE								/
+RewriteRule 		^readme.md								/
+RewriteRule 		^README.md								/
+RewriteRule 		^composer.json							/
+RewriteRule 		^composer.lock							/
+RewriteRule 		^.htaccess								/
 
 ErrorDocument 100 	/index.php?fra_error=100
 ErrorDocument 101 	/index.php?fra_error=101
@@ -62,3 +75,5 @@ ErrorDocument 502 	/index.php?fra_error=502
 ErrorDocument 503 	/index.php?fra_error=503
 ErrorDocument 504 	/index.php?fra_error=504
 ErrorDocument 505 	/index.php?fra_error=505
+
+########## END - FRANCESCA FRAMEWORK DIRECTIVE - DO NOT MODIFY ##########
