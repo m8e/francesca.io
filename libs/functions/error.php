@@ -50,16 +50,16 @@ if($_GET["fra_error"] != "" || (!file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".
 		$fra_config["controller"] 	= fra_config["error_controller"];
 		$fra_config["action"] 		= fra_config["error_action"];
 		if(isset($_GET["fra_error"])) {
-			header("HTTP/1.0 ".$_GET["fra_error"]." ERROR");   
+			header("HTTP/1.0 ".$_GET["fra_error"]."");   
 			$fra_config["error"]	= $_GET["fra_error"];
 		} else {
-			header("HTTP/1.0 404 FILE NOT FOUND");
-			fra_error404_log();
-			fra_template_404();
+			//custom error page
+			header("HTTP/1.0 404");
+			$fra_config["error"]	= $_GET["fra_error"];
 		}
 } else {
 	if($fra_config["controller"] == fra_config["error_controller"] && $fra_config["action"] == fra_config["error_action"]) {
-		header("HTTP/1.0 404 FILE NOT FOUND");
+		header("HTTP/1.0 404");
 		fra_error404_log();
 		fra_template_404();
 	} else {
