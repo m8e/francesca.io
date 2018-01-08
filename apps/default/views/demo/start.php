@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<h1>
+<pre>
+
+<?php
+
+
+
+$database = Array(
+				$prenotazione1 = Array(1, "2018-02-14 - 11:00", "2018-02-14 - 12:00"),
+				$prenotazione2 = Array(2, "2018-02-14 - 11:00", "2018-02-14 - 12:00"),
+				$prenotazione3 = Array(3, "2018-02-14 - 11:00", "2018-02-14 - 12:00")
+				);
+
+$test = $fra->date->avaibility("2018-01-01","2019-01-01",$database,34);
+
+var_dump($test);
+
+die();
+?>
+
 
 	<head>
 
