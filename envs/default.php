@@ -35,8 +35,8 @@ $fra_config["logs"] 							= 0;
 $fra_config["minify"] 							= 0;
 
 //Set Default Routing (home page)
-$fra_config["default_controller"] 				= "demo";
-$fra_config["default_action"] 					= "start";
+$fra_config["default_controller"] 				= "welcome";
+$fra_config["default_action"] 					= "index";
 
 //Set a main default redirect (https://domain.xyz) or keep empty
 $fra_config["default_redirect"] 				= "";
