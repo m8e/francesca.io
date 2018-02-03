@@ -13,6 +13,14 @@
 */
 
 
+
+//Application main model include
+if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/models/".fra_var["controller"].".php")) {
+	require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/models/".fra_var["controller"].".php");
+}
+
+
+
 //Application models include
 if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/models/".fra_var["controller"]."/".fra_var["action"].".php")) {
 	require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/models/".fra_var["controller"]."/".fra_var["action"].".php");
