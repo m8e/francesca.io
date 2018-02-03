@@ -13,6 +13,12 @@
 */
 
 
+//Application main middleware include
+if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/middlewares/".fra_var["controller"].".php")) {
+	require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/middlewares/".fra_var["controller"].".php");
+}
+
+
 //Application middlewares include
 if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/middlewares/".fra_var["controller"]."/".fra_var["action"].".php")) {
 	require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_var["folder"]."/middlewares/".fra_var["controller"]."/".fra_var["action"].".php");
