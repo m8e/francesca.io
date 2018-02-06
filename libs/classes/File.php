@@ -164,7 +164,13 @@ Class File {
 	***************************************************
 	| This function uploads all $_FILES into a DIR
 	| verifing files EXTENSIONS (array) and returns
-	| a TRUE or FALSE value.
+	| an array of files names.
+	|
+	| You can use multiple uploads too... This is a form example:
+	| <form action="#" method="post" enctype="multipart/form-data">
+    | <input name="upload[]" type="file" multiple="multiple" />
+    | <input type="submit" value="Upload">
+	| </form>
 	***************************************************/
 		$n = 0;
 		$result = Array();
@@ -173,28 +179,30 @@ Class File {
 		} else {
 			$allowed = $ext;
 		}
-		foreach($_FILES as $index => $file) {
-			$fileName     = $file['name'];
-			$fileTempName = $file['tmp_name'];
-			$ext = pathinfo($fileName, PATHINFO_EXTENSION);
-			$lext = strlen($ext);
-			$lext = $lext + 1;
-			$fileonlyname = substr($fileName,0,-$lext);
-			if(!in_array($ext,$allowed)) {
-	    		return false;
+		foreach($_FILES as $file) {
+			foreach($file["name"] as $count) {
+				$fileName     = $file['name'][$n];
+				$fileTempName = $file['tmp_name'][$n];
+				$ext = pathinfo($fileName, PATHINFO_EXTENSION);
+				$lext = strlen($ext);
+				$lext = $lext + 1;
+				$fileonlyname = substr($fileName,0,-$lext);
+				if(!in_array($ext,$allowed)) {
+		    		return false;
+				}
+				if(!empty($file['error'][$index])) {
+					return false;
+				}
+				if(!empty($fileTempName) && is_uploaded_file($fileTempName)) {
+					$filenewname = $fileonlyname."_".md5("".$fileonlyname."".microtime()."").".".$ext;
+					mkdir(fra_var["files_path"]."".$folder);
+					move_uploaded_file($fileTempName, fra_var["files_path"]."".$folder."/".$filenewname."");
+					$result[$n] = $filenewname;
+				}
+				$n = $n + 1;
 			}
-			if(!empty($file['error'][$index])) {
-				return false;
-			}
-			if(!empty($fileTempName) && is_uploaded_file($fileTempName)) {
-				$filenewname = $fileonlyname."_".md5("".$fileonlyname."".microtime()."").".".$ext;
-				mkdir(fra_var["files_path"]."".$folder);
-				move_uploaded_file($fileTempName, fra_var["files_path"]."".$folder."/".$filenewname."");
-				$result[$n] = $filenewname;
-			}
-		$n = $n + 1;
 		}
-		return $filenewname;
+		return $result;
 	}
 
 
