@@ -1,6 +1,7 @@
 # </> Francesca Framework
 
 > Modern And Lightest PHP Framework Developed With  For Developers
+[https://francesca.io](francesca.io)
 
 ## Features
 
@@ -17,18 +18,8 @@
 * RESTful support
 * MySql and Sqlite ORM
 * native PSR-4 support
-* only 69kb files size
+* only 70kb files size
 * active updates and support
-
-## Requirement
-
-All you need is a good and professional web hosting service or cloud VPS.
-
-* Apache based web-server (or hybrid nigix/Apache)
-* PHP 7.0 version or later
-* PDO extension
-* Composer extension
-* SSH access to public root with writible permission on it
 
 ## Get Started
 
@@ -49,11 +40,21 @@ $public_html_root> php fra createapp my-app-name
 
 Edit your environment file.
 
-Have a nice code :)
+> Enjoy Francesca :)
 
 ## Documentation
 
 You can find an useful documentation on official website: [https://francesca.io](https://francesca.io)
+
+## Requirement
+
+All you need is a good and professional web hosting service or cloud VPS.
+
+* Apache based web-server (or hybrid nigix/Apache)
+* PHP 7.0 version or later
+* PDO extension
+* Composer extension
+* SSH access to public root with writible permission on it
 
 ## License
 
