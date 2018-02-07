@@ -91,7 +91,7 @@ if($argv[2] != "") {
 	switch ($argv[1]) {
 		case "listenvs":
 			$envs = scandir(__DIR__ ."/../../envs/");
-			echo "Francesca Framework App Envs\n";
+			echo "\nFrancesca Framework environments list\n";
 			echo "\n";
 			echo "****************************";
 			echo "\n\n";
@@ -99,6 +99,7 @@ if($argv[2] != "") {
 				if($file != ".." && $file !=".") {
 					include(__DIR__ ."/../../envs/".$file);
 					echo "ENVIRONMENT: ".substr($file,0,-4)."\n\n";
+					echo "APPLICATION FOLDER: ".$fra_config["folder"]."\n\n";
 					if($fra_config["default_redirect"] == "" && $fra_config["default_controller"] == "") {
 						echo "No settings for default redirect";
 					} else {

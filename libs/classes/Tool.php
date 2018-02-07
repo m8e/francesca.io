@@ -240,7 +240,7 @@ Class Tool {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public function sessionset($vars=NULL) {
-	/* $fra->tool->session_set(VARS)
+	/* $fra->tool->sessionset(VARS)
 	***************************************************
 	| This function adds an array of vars to session.
 	***************************************************/
@@ -257,7 +257,7 @@ Class Tool {
 
 
 	public function sessionread($var=NULL) {
-	/* $fra->tool->session(VAR)
+	/* $fra->tool->sessionread(VAR)
 	***************************************************
 	| This function returns a VAR session value.
 	***************************************************/
@@ -279,10 +279,10 @@ Class Tool {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public function cookieset($name="test", $value="", $time=3600) {
-	/* $fra->tool->cookie_set(NAME, VALUE)
+	/* $fra->tool->cookieset(NAME, VALUE, TIME)
 	***************************************************
-	| This function sets a cookie with a name, a value
-	| and a time in second (ex. 86400 -> 1day,
+	| This function sets a cookie with a NAME, a VALUE
+	| and a TIME in second (ex. 86400 -> 1day,
 	| 3600 -> 1h, ...).
 	***************************************************/
 		setcookie($name, $value, time() + $time, "/");
@@ -292,7 +292,7 @@ Class Tool {
 
 
 	public function cookieread($name=NULL) {
-	/* $fra->tool->cookie_read(NAME)
+	/* $fra->tool->cookieread(NAME)
 	***************************************************
 	| This function returns a cookie value.
 	***************************************************/
@@ -316,7 +316,7 @@ Class Tool {
 //////////////////////////////////////////////////////////////////////////////////////////////////* ENCRYPT/DECRYPT *///////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	function encrypt($string=NULL, $key=NULL) {
+	function encrypt($string=NULL, $key="francesca") {
 	/* $fra->tool->encryot(STRING, KEY)
 	***************************************************
 	| This function encrypts a STRING with a KEY.
@@ -329,7 +329,7 @@ Class Tool {
 	}
 
 
-	function decrypt($string=NULL, $key=NULL) {
+	function decrypt($string=NULL, $key="francesca") {
 	/* $fra->tool->decrypt(STRING, KEY)
 	***************************************************
 	| This function decrypts a STRING with a KEY.
