@@ -37,7 +37,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/php.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/utilities.php");
 
 
-//GLOBAL COSTANTS
+//GLOBAL CONSTANTS
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/globals.php");
 
 

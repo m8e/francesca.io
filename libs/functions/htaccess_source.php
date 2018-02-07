@@ -35,6 +35,7 @@ RewriteRule 		^README.md								/
 RewriteRule 		^composer.json							/
 RewriteRule 		^composer.lock							/
 RewriteRule 		^.htaccess								/
+RewriteRule 		^globals.php							/
 
 ErrorDocument 100 	/index.php?fra_error=100
 ErrorDocument 101 	/index.php?fra_error=101

@@ -13,7 +13,7 @@
 */
 
 
-//Temp config costant define
+//Temp config constant define
 define("fra_config", $fra_config);
 
 

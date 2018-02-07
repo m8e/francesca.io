@@ -22,6 +22,10 @@
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/session.php");
 
 
+//GLOBAL COSTANTS
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/globals.php");
+
+
 //ENVIRONMENT CONFIG
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/environment.php");
 
@@ -70,7 +74,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/ftp.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/custom.php");
 
 
-//DEFINE DEFINITIVE "fra_var" GLOBAL COSTANT
+//DEFINE DEFINITIVE "fra_var" GLOBAL CONSTANT
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/global.php");
 
 
