@@ -89,6 +89,146 @@ if($argv[2] != "") {
 } else {
 
 	switch ($argv[1]) {
+		case "listenvs":
+			$envs = scandir(__DIR__ ."/../../envs/");
+			echo "Francesca Framework App Envs\n";
+			echo "\n";
+			echo "****************************";
+			foreach ($envs as $file) {
+				if($file != ".." && $file !=".") {
+					include(__DIR__ ."/../../envs/".$file);
+					echo "ENVIRONMENT: ".substr($file,0,-4)."\n\n";
+					if($fra_config["default_redirect"] == "" && $fra_config["default_controller"] == "") {
+						echo "No settings for default redirect";
+					} else {
+						if($fra_config["default_redirect"] != "") {
+							echo "Default redirect\t|\texternal\t|\t";
+							echo $fra_config["default_redirect"];
+						} else {
+							echo "Default redirect\t|\tinternal\t|\t";
+							echo $fra_config["default_controller"];
+							echo "/";
+							echo $fra_config["default_action"];
+							echo "/";
+						}
+					}
+					echo "\n\n";
+					if($fra_config["error_redirect"] == "" && $fra_config["error_controller"] == "") {
+						echo "No settings for error redirect";
+					} else {
+						if($fra_config["error_redirect"] != "") {
+							echo "Error redirect\t|\texternal\t|\t";
+							echo $fra_config["error_redirect"];
+						} else {
+							echo "Error redirect\t|\tinternal\t|\t";
+							echo $fra_config["error_controller"];
+							echo "/";
+							echo $fra_config["error_action"];
+							echo "/";
+						}
+					}
+					echo "\n";
+					echo "\n";
+					echo "CONTROLLERS";
+					echo "\n";
+					$controllers = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/controllers/");
+					foreach ($controllers as $file) {
+						if($file != ".." && $file !=".") {
+							echo "\t> ";
+							if(is_dir(__DIR__ ."/../../apps/".$fra_config["folder"]."/controllers/".$file)) {
+								echo $file;
+								echo "\n";
+								$subs = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/controllers/".$file);
+								foreach ($subs as $sub) {
+									if($sub != ".." && $sub !=".") {
+										echo "\t - ";
+										echo substr($sub,0,-4);
+										echo "\n";
+									}
+								}
+							} else {
+								echo substr($file,0,-4);
+							}
+							echo "\n";
+						}
+					}
+					echo "MODELS";
+					echo "\n";
+					$models = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/models/");
+					foreach ($models as $file) {
+						if($file != ".." && $file !=".") {
+							echo "\t> ";
+							if(is_dir(__DIR__ ."/../../apps/".$fra_config["folder"]."/models/".$file)) {
+								echo $file;
+								echo "\n";
+								$subs = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/models/".$file);
+								foreach ($subs as $sub) {
+									if($sub != ".." && $sub !=".") {
+										echo "\t - ";
+										echo substr($sub,0,-4);
+										echo "\n";
+									}
+								}
+							} else {
+								echo substr($file,0,-4);
+							}
+							echo "\n";
+						}
+					}
+					echo "MIDDLEWARES";
+					echo "\n";
+					$middlewares = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/middlewares/");
+					foreach ($middlewares as $file) {
+						if($file != ".." && $file !=".") {
+							echo "\t> ";
+							if(is_dir(__DIR__ ."/../../apps/".$fra_config["folder"]."/middlewares/".$file)) {
+								echo $file;
+								echo "\n";
+								$subs = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/middlewares/".$file);
+								foreach ($subs as $sub) {
+									if($sub != ".." && $sub !=".") {
+										echo "\t - ";
+										echo substr($sub,0,-4);
+										echo "\n";
+									}
+								}
+							} else {
+								echo substr($file,0,-4);
+							}
+							echo "\n";
+						}
+					}
+					echo "VIEWS";
+					echo "\n";
+					$views = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/views/");
+					foreach ($views as $file) {
+						if($file != ".." && $file !=".") {
+							echo "\t> ";
+							if(is_dir(__DIR__ ."/../../apps/".$fra_config["folder"]."/views/".$file)) {
+								echo $file;
+								echo "\n";
+								$subs = scandir(__DIR__ ."/../../apps/".$fra_config["folder"]."/views/".$file);
+								foreach ($subs as $sub) {
+									if($sub != ".." && $sub !=".") {
+										echo "\t - ";
+										echo substr($sub,0,-4);
+										echo "\n";
+									}
+								}
+							} else {
+								echo substr($file,0,-4);
+							}
+							echo "\n";
+						}
+					}
+					echo "\n";
+					echo "****************************";
+					echo "\n";
+					echo "\n";
+					echo "\n";
+				}
+			}
+			break;
 		case "htreset":
 			unlink(__DIR__ ."/../../.htaccess");
 			copy(__DIR__ ."/../../libs/sources/hta/htaccess.php", __DIR__ ."/../../.htaccess");
@@ -102,6 +242,7 @@ if($argv[2] != "") {
 			echo "\n#########################################\n";
 			echo "## Francesca Framework CLI HELP GUIDE ##\n";
 			echo "#########################################\n\n";
+			echo "'listenvs'\nReturns a list of environments files and their routes structure.\n\n";
 			echo "'htreset'\nLets you restore original .htaccess file.\n\n";
 			echo "'logreset'\nLets you flush logs cache into logs directory.\n\n";
 			echo "'createenv HOSTNAME'\nLets you create an environment configuration file for a determinate HOSTNAME into envs folder.\n\n";
