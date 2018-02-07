@@ -94,6 +94,7 @@ if($argv[2] != "") {
 			echo "Francesca Framework App Envs\n";
 			echo "\n";
 			echo "****************************";
+			echo "\n\n";
 			foreach ($envs as $file) {
 				if($file != ".." && $file !=".") {
 					include(__DIR__ ."/../../envs/".$file);
