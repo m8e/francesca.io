@@ -17,7 +17,6 @@
 |
 */
 
-
 //DEFAULT FRAMEWORK TEMPLATE
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/template.php");
 
@@ -38,8 +37,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/php.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/utilities.php");
 
 
-//SESSION START
-require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/session.php");
+//GLOBAL COSTANTS
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/globals.php");
+
+
+//ENVIRONMENT CONFIG
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/environment.php");
 
 
 //ENVIRONMENT CONFIG
