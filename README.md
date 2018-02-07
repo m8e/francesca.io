@@ -2,7 +2,7 @@
 
 > Modern And Lightest PHP Framework Developed With  For Developers
 
-[francesca.io](https://francesca.io)
+Discover Francesca: [francesca.io](https://francesca.io)
 
 ## Features
 
@@ -41,7 +41,7 @@ $public_html_root> php fra createapp my-app-name
 
 Edit your environment file.
 
-> Enjoy Francesca :)
+### Enjoy Francesca :)
 
 ## Documentation
 
