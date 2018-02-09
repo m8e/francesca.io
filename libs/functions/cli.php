@@ -49,7 +49,8 @@ if($argv[1] == "") {
 	echo "##                                    ##\n";
 	echo "## WELCOME IN FRANCESCA FRAMEWORK CLI ##\n";
 	echo "##                                    ##\n";
-	echo "## Digit 'help' for fra commands list ##\n";
+	echo "## 		Digit 'php fra help'		##\n";
+	echo "## 	   for fra commands list 		##\n";
 	echo "##                                    ##\n";
 	echo "##         Enjoy Francesca ;)         ##\n";
 	echo "##                                    ##\n";
@@ -63,21 +64,21 @@ if($argv[1] == "") {
 if($argv[2] != "") {
 
 	switch ($argv[1]) {
-		case "createapp":
+		case "create-app":
 			if(!is_dir(__DIR__ ."/../../apps/".$argv[2])){
 				mkdir(__DIR__ ."/../../apps/".$argv[2]);
 				xcopy(__DIR__ ."/../../libs/sources/app", __DIR__ ."/../../apps/".$argv[2]);
 				echo "App '".$argv[2]."' created.\n";
 			} else {
-				echo "App '".$argv[2]."' already exists.\n";
+				echo "ERROR! - App '".$argv[2]."' already exists.\n";
 			}
 			break;
-		case "createenv":
+		case "create-env":
 			if(!file_exists(__DIR__ ."/../../envs/".$argv[2].".php")) {
 				copy(__DIR__ ."/../../libs/sources/env/environment.php", __DIR__ ."/../../envs/".$argv[2].".php");
 				echo "Env '".$argv[2]."' created.\n";
 			} else {
-				echo "Env '".$argv[2]."' already exists.\n";
+				echo "ERROR! - Env '".$argv[2]."' already exists.\n";
 			}
 			break;
 		default:
@@ -89,7 +90,7 @@ if($argv[2] != "") {
 } else {
 
 	switch ($argv[1]) {
-		case "listenvs":
+		case "list-envs":
 			$envs = scandir(__DIR__ ."/../../envs/");
 			echo "\nFrancesca Framework environments list\n";
 			echo "\n";
@@ -99,7 +100,7 @@ if($argv[2] != "") {
 				if($file != ".." && $file !=".") {
 					include(__DIR__ ."/../../envs/".$file);
 					echo "ENVIRONMENT: ".substr($file,0,-4)."\n\n";
-					echo "APPLICATION FOLDER: ".$fra_config["folder"]."\n\n";
+					echo "APP FOLDER: ".$fra_config["folder"]."\n\n";
 					if($fra_config["default_redirect"] == "" && $fra_config["default_controller"] == "") {
 						echo "No settings for default redirect";
 					} else {
@@ -119,10 +120,10 @@ if($argv[2] != "") {
 						echo "No settings for error redirect";
 					} else {
 						if($fra_config["error_redirect"] != "") {
-							echo "Error redirect\t|\texternal\t|\t";
+							echo "Error redirect\t\t|\texternal\t|\t";
 							echo $fra_config["error_redirect"];
 						} else {
-							echo "Error redirect\t|\tinternal\t|\t";
+							echo "Error redirect\t\t|\tinternal\t|\t";
 							echo $fra_config["error_controller"];
 							echo "/";
 							echo $fra_config["error_action"];
@@ -231,12 +232,12 @@ if($argv[2] != "") {
 				}
 			}
 			break;
-		case "htreset":
+		case "reset-ht":
 			unlink(__DIR__ ."/../../.htaccess");
 			copy(__DIR__ ."/../../libs/sources/hta/htaccess.php", __DIR__ ."/../../.htaccess");
 			echo ".htaccess was restored.\n";
 			break;
-		case "logreset":
+		case "reset-log":
 			emptydir(__DIR__ ."/../../logs/", ".log");
 			echo "Logs cache is now empty.\n";
 			break;
@@ -244,11 +245,12 @@ if($argv[2] != "") {
 			echo "\n#########################################\n";
 			echo "## Francesca Framework CLI HELP GUIDE ##\n";
 			echo "#########################################\n\n";
-			echo "'listenvs'\nReturns a list of environments files and their routes structure.\n\n";
-			echo "'htreset'\nLets you restore original .htaccess file.\n\n";
-			echo "'logreset'\nLets you flush logs cache into logs directory.\n\n";
-			echo "'createenv HOSTNAME'\nLets you create an environment configuration file for a determinate HOSTNAME into envs folder.\n\n";
-			echo "'createapp APPNAME'\nLets you create an empty app with a custom APPNAME into apps folder.\n\n";
+			echo "'php fra list-envs'\nReturns a list of environments files and their routes structure.\n\n";
+			echo "'php fra reset-ht'\nLets you restore original .htaccess file.\n\n";
+			echo "'php fra reset-log'\nLets you flush logs cache into logs directory.\n\n";
+			echo "'php fra create-env HOSTNAME'\nLets you create an environment configuration file for a determinate HOSTNAME into envs folder.\n\n";
+			echo "'php fra create-app APPNAME'\nLets you create an empty app with a custom APPNAME into apps folder.\n\n";
+			echo "You can find a full Francesca Framework documentation on www.francesca.io!\n\n";
 			break;	
 		default:
 			echo "Command not found.\n";
