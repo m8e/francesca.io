@@ -2,8 +2,6 @@
 
 > Modern And Lightest PHP Framework Developed With  For Developers
 
-Discover Francesca: [francesca.io](https://francesca.io)
-
 ## Features
 
 * extremely easy to learn and use
@@ -31,17 +29,17 @@ $public_html_root> composer create-project andreapollastri/francescaframework .
 
 Create a new environment linked to your domain:
 ```
-$public_html_root> php fra createenv your-domain.ltd
+$public_html_root> php fra create-env your-domain.ltd
 ```
 
 Create a new application workspace:
 ```
-$public_html_root> php fra createapp my-app-name
+$public_html_root> php fra create-app my-app-name
 ```
 
 Edit your environment file.
 
-### Enjoy Francesca :)
+#### Enjoy Francesca :)
 
 ## Documentation
 
