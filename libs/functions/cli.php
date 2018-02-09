@@ -49,8 +49,8 @@ if($argv[1] == "") {
 	echo "##                                    ##\n";
 	echo "## WELCOME IN FRANCESCA FRAMEWORK CLI ##\n";
 	echo "##                                    ##\n";
-	echo "## 		Digit 'php fra help'		##\n";
-	echo "## 	   for fra commands list 		##\n";
+	echo "##        Digit 'php fra help'        ##\n";
+	echo "##       for fra commands list        ##\n";
 	echo "##                                    ##\n";
 	echo "##         Enjoy Francesca ;)         ##\n";
 	echo "##                                    ##\n";
@@ -249,11 +249,11 @@ if($argv[2] != "") {
 			echo "'php fra reset-ht'\nLets you restore original .htaccess file.\n\n";
 			echo "'php fra reset-log'\nLets you flush logs cache into logs directory.\n\n";
 			echo "'php fra create-env HOSTNAME'\nLets you create an environment configuration file for a determinate HOSTNAME into envs folder.\n\n";
-			echo "'php fra create-app APPNAME'\nLets you create an empty app with a custom APPNAME into apps folder.\n\n";
-			echo "You can find a full Francesca Framework documentation on www.francesca.io!\n\n";
+			echo "'php fra create-app APPNAME'\nLets you create an empty app with a custom APPNAME into apps folder.\n\n\n";
+			echo "DOCUMENTATION\nYou can find a full Francesca Framework documentation on www.francesca.io!\n\n\n";
 			break;	
 		default:
-			echo "Command not found.\n";
+			echo "ERROR! - Command not found.\n";
 			break;
 	}
 
