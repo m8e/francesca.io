@@ -68,6 +68,9 @@ Class Http {
 			} else {
 				$sendip = $_SERVER['REMOTE_ADDR'];
 			}
+			//in case of multiple IPs
+			$sendip = explode(",", $sendip);
+			$sendip = $sendip[0];
 			if(is_array($ip) && in_array($sendip, $ip)) { 
 				$auth = true;
 			} else {
