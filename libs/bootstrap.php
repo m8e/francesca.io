@@ -45,10 +45,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/globals.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/environment.php");
 
 
-//ENVIRONMENT CONFIG
-require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/environment.php");
-
-
 //FRAMEWORK GLOBAL TEMP CONFIG VAR
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/tempconfig.php");
 

@@ -27,8 +27,8 @@ $fra_hard_config["error"] 						= $fra_config["error"];
 
 
 //Application custom config include
-if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/config.php")) {
-	require_once($_SERVER['DOCUMENT_ROOT']."/apps/".fra_config["folder"]."/config.php");
+if(file_exists($_SERVER['DOCUMENT_ROOT']."/apps/".$fra_config["folder"]."/config.php")) {
+	require_once($_SERVER['DOCUMENT_ROOT']."/apps/".$fra_config["folder"]."/config.php");
 }
 
 
