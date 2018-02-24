@@ -177,6 +177,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/minify.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/views.php");
 
 
+//ENDING INCLUDE
+require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/ending.php");
+
+
 //LOGS INCLUDE
 require_once($_SERVER['DOCUMENT_ROOT']."/libs/functions/logs.php");
 
