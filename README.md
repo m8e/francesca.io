@@ -8,16 +8,16 @@
 * friendly and commented construction
 * multi-tenant configurations and apps manager
 * composer installation
-* custom CLI tool
+* custom CLI tools
 * schelude cron tasks
 * MVC http routing
 * classes autoloader
-* singleton classes pattern
 * middlewares support
 * RESTful support
 * MySql and Sqlite ORM
 * native PSR-4 support
 * only 70kb files size
+* PHP Unit Test support
 * active updates and support
 
 ## Get Started
