@@ -1,0 +1,43 @@
+<?php
+
+/*
+| Francesca Framework
+| https://francesca.io
+|
+| Copyright 2018, Andrea Pollastri
+| Released under the MIT license
+|
+|
+|
+|------------------------------------------------------------------------
+| Unit Test - unit-test.php
+|------------------------------------------------------------------------
+| You can test your vendors and classes using PHP unit test running this:
+| libs/vendors/bin/phpunit --bootstrap libs/vendors/autoload.php unit-test
+|
+*/
+
+
+Use PHPUnit\Framework\TestCase;
+
+//Example
+Use Francesca\Core;
+Use Francesca\Text;
+
+//CLI CHECK
+if(PHP_SAPI == 'cli') {
+
+	//Example
+	final class UnitTestExample extends TestCase {
+
+	    public function testclass(): void {
+	        $this->assertEquals(3,Text::length('abc'));
+	    }
+
+	}
+
+} else {
+
+	die("You have to use command line!");
+
+}
