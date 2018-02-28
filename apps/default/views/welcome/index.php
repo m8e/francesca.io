@@ -48,7 +48,7 @@
 					<b>Welcome in <i class="fa fa-code" aria-hidden="true"></i> Francesca Framework</b><br>
 					<span class="under-text">modern and lightest PHP framework developed with <i class="fa fa-heart" aria-hidden="true"></i> for developers</span>
 					<div class="spacer"></div>
-					<a class="back-link" href="https://francesca.io"><i class="fa fa-magic" aria-hidden="true"></i> View Documentation</a>
+					<a class="back-link" href="/welcome/doc/"><i class="fa fa-magic" aria-hidden="true"></i> View Documentation</a>
 					<div class="spacer"></div>
 				</div>
 			</div>
